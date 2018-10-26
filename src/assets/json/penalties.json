@@ -1,0 +1,19 @@
+[
+    {"id" : 1, "penalty" : "APOLOGIZE"},
+    {"id" : 2, "penalty" : "SWEAR"},
+    {"id" : 3, "penalty" : "SNAP YOUR FINGERS"},
+    {"id" : 4, "penalty" : "CLAP AUDIBLY"},
+    {"id" : 5, "penalty" : "MISPRONOUNCE A WORD"},
+    {"id" : 6, "penalty" : "HUM THREE NOTES"},
+    {"id" : 7, "penalty" : "SAY THREE CONSECUTIVE WORDS BEGINNING WITH THE SAME LETTER"},
+    {"id" : 8, "penalty" : "SAY TWO CONSECUTIVE RHYMING WORDS"},
+    {"id" : 9, "penalty" : "SAY THE NUMBER OF FINGERS HELD UP ON YOUR LEFT HAND"},
+    {"id" : 10, "penalty" : "REMAIN SILENT FOR TEN SECONDS"},
+    {"id" : 11, "penalty" : "INTERRUPT THE INVESTIGATOR"},
+    {"id" : 12, "penalty" : "SAY YOUR LAST NAME"},
+    {"id" : 13, "penalty" : "FAIL TO COMPLETE A SENTENCE"},
+    {"id" : 14, "penalty" : "REPEAT A QUESTION WORD FOR WORD"},
+    {"id" : 15, "penalty" : "SAY 'WHAT'"},
+    {"id" : 16, "penalty" : "SAY AT LEAST THREE CONSECUTIVE LETTERS"},
+    {"id" : 17, "penalty" : "BEGIN A NEW SENTENCE WITH THE LAST WORD SPOKEN"}
+]
