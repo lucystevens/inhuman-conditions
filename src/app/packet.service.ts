@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Penalty, Packet, RoleType, SuspectNote, SuspectRole} from './card-definitions';
+import {Penalty, Packet, RoleType, SuspectNote, SuspectRole, InvestigatorInquiry} from './card-definitions';
 import {PENALTIES, PACKETS, ROLE_TYPES, SUSPECT_NOTES} from './card-objects';
 import {RandomService} from './random.service';
 
@@ -29,4 +29,5 @@ export class PacketService {
     const rand = this.random.getRandomNumber(0, packet.roleCards.length);
     return packet.roleCards[rand];
   }
+
 }

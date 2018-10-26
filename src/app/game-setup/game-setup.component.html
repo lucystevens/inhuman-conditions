@@ -46,9 +46,9 @@
       <h6>{{getRoleType(role).info}}</h6>
     </div>
   </div>
-
+  <hr>
 </div>
-<hr>
+
 
 <div class="suspect-note setup-stage">
   <h1>Choose a Suspect Note</h1>
@@ -59,3 +59,29 @@
   </div>
 </div>
 <hr>
+
+<div *ngIf="selectedPacket" class="primary-inquiries setup-stage">
+  <h1>Choose 2 Primary Inquiries</h1>
+  <div class="row">
+    <div *ngFor="let inquiry of selectedPacket.primaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectPrimaryInquiry(inquiry)">
+      <h3>{{inquiry.inquiry}}</h3>
+      <br>
+      <h5>Suggested Prompts</h5>
+      <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<div *ngIf="selectedPacket" class="secondary-inquiries setup-stage">
+  <h1>Choose 2 Secondary Inquiries</h1>
+  <div class="row">
+    <div *ngFor="let inquiry of selectedPacket.secondaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectSecondaryInquiry(inquiry)">
+      <h3>{{inquiry.inquiry}}</h3>
+      <br>
+      <h5>Suggested Prompts</h5>
+      <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
+    </div>
+  </div>
+  <hr>
+</div>
