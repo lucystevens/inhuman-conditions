@@ -21,3 +21,41 @@
     </div>
 </div>
 <hr>
+
+<div *ngIf="selectedPacket" class="suspect-role setup-stage">
+  <h1>Choose a Suspect Role</h1>
+
+  <div *ngIf="!roles" class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-secondary" (click)="fetchRole()">Get 1 random role (advanced)</button>
+    </div>
+  </div>
+
+  <div *ngIf="roles" class="row">
+    <div *ngFor="let role of roles" class="selectable-cell col-sm-3" [ngClass]="{active: role === selectedRole}" (click)="selectRole(role)">
+      <h6>{{getRoleType(role).flavourName}}</h6>
+      <h6>{{role.flavour}}</h6>
+      <hr>
+      <h3>{{getRoleType(role).name}}</h3>
+      <hr>
+      <h4 *ngFor="let goal of role.goals">{{goal}}</h4>
+      <hr>
+      <h6>{{getRoleType(role).info}}</h6>
+    </div>
+  </div>
+
+</div>
+<hr>
+
+<div class="suspect-note setup-stage">
+  <h1>Choose a Suspect Note</h1>
+  <div class="row">
+    <div *ngFor="let note of notes" class="selectable-cell col-sm-5" [ngClass]="{active : note===selectedNote}" (click)="selectNote(note)">
+      {{note.name}}
+    </div>
+  </div>
+</div>
+<hr>
