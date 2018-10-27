@@ -1,25 +1,23 @@
-<div class="penalties setup-stage">
-  <h1>Choose a penalty</h1>
+<app-setup-stage title="Choose a penalty" state="active">
   <div class="row">
     <div *ngFor="let penalty of penalties" class="selectable-cell col-sm-3" [ngClass]="{active : penalty===selectedPenalty}" (click)="selectPenalty(penalty)">
       {{penalty.penalty}}
     </div>
   </div>
-</div>
+</app-setup-stage>
 <hr>
 
-<div class="packets setup-stage">
-  <h1>Choose a packet</h1>
+<app-setup-stage title="Choose a packet" state="incomplete">
   <div class="row">
-      <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===selectedPacket}" (click)="selectPacket(packet)">
-        <div class="col-sm-6">{{packet.fullName}}</div>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-3">
-          <img class="pull-right" src="assets/images/{{packet.icon}}.png" height="50"/>
-        </div>
+    <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===selectedPacket}" (click)="selectPacket(packet)">
+      <div class="col-sm-6">{{packet.fullName}}</div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3">
+        <img class="pull-right" src="assets/images/{{packet.icon}}.png" height="50"/>
       </div>
     </div>
-</div>
+  </div>
+</app-setup-stage>
 <hr>
 
 <div *ngIf="selectedPacket" class="suspect-role setup-stage">
