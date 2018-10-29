@@ -19,31 +19,4 @@ export class SetupStageComponent implements OnInit {
   ngOnInit() {
   }
 
-  validateStep(){
-    if(this.step == 1){
-      this.checkValue(this.setup.penalty, "penalty");
-    }
-    else if(this.step == 2){
-      this.checkValue(this.setup.packet, "packet");
-    }
-    else if(this.step == 3){
-      this.checkValue(this.setup.role, "suspect role");
-    }
-    else if(this.step == 4){
-      this.checkValue(this.setup.note, "suspect note");
-    }
-    else if(this.step == 5){
-      
-    }
-  }
-
-  private checkValue(value: object, name: string){
-    if(value){
-      this.setup.step = this.step + 1;
-    }
-    else {
-      this.error = "You must choose a " + name + " before proceding"
-    }
-  }
-
 }

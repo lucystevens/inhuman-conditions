@@ -5,15 +5,12 @@
       <div class="col-sm-10">{{title}}</div>
       <div class="col-sm-2" style="text-align:center">
         <i *ngIf="setup.step < step" class="far fa-square"></i>
-        <i *ngIf="setup.step == step" class="fas fa-spinner"></i>
-        <i *ngIf="setup.step > step" class="fas fa-check"></i>
+        <i *ngIf="setup.step == step" class="fas fa-ellipsis-h"></i>
+        <i *ngIf="setup.step > step" class="far fa-check-square"></i>
       </div>
     </div>
   </div>
 
-  <div *ngIf="setup.step == step" class="card-body">
-    <ng-content></ng-content>
-    <button class="btn btn-secondary" (click)="setup.step = step + 1">Next</button>
-  </div>
+  <ng-content *ngIf="setup.step == step"></ng-content>
 
 </div>

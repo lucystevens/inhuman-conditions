@@ -22,6 +22,8 @@ export class GameSetupComponent implements OnInit {
 
   ngOnInit() {
     this.setup = new GameSetup();
+    this.setup.step = 1;
+    
     this.penalties = this.cards.getPenalties();
     this.packets = this.cards.getPackets();
     this.notes = this.cards.getSuspectNotes();

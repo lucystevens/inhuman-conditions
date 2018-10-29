@@ -1,14 +1,17 @@
-<app-setup-stage title="Choose a penalty" setup="{{setup}}" step="1">
-  <div class="row">
+<app-setup-stage title="Choose a penalty" [setup]="setup" step="1">
+  <div class="card-body row">
     <div *ngFor="let penalty of penalties" class="selectable-cell col-sm-3" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
       {{penalty.penalty}}
     </div>
   </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" (click)="setup.step = 2">Next</button>
+  </div>
 </app-setup-stage>
 
 <!--- Use bootstrap cards (replaced panels in bootstrap 4)-->
-<app-setup-stage title="Choose a packet" setup="{{setup}}" step="2">
-  <div class="row">
+<app-setup-stage title="Choose a packet" [setup]="setup" step="2">
+  <div class="card-body row">
     <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===setup.packet}" (click)="selectPacket(packet)">
       <div class="col-sm-6">{{packet.fullName}}</div>
       <div class="col-sm-3"></div>
@@ -17,45 +20,56 @@
       </div>
     </div>
   </div>
-</app-setup-stage>
-
-<app-setup-stage title="Choose a Suspect Role" setup="{{setup}}" step="3">
-  <div *ngIf="setup.packet && !roles" class="row">
-    <div class="col-sm-6">
-      <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
-    </div>
-    <div class="col-sm-6">
-      <button class="btn btn-secondary" (click)="fetchRole()">Get 1 random role (advanced)</button>
-    </div>
-  </div>
-
-  <div *ngIf="roles" class="row">
-    <div *ngFor="let role of roles" class="selectable-cell col-sm-3" [ngClass]="{active: role === setup.role}" (click)="selectRole(role)">
-      <h6>{{getRoleType(role).flavourName}}</h6>
-      <h6>{{role.flavour}}</h6>
-      <hr>
-      <h3>{{getRoleType(role).name}}</h3>
-      <hr>
-      <h4 *ngFor="let goal of role.goals">{{goal}}</h4>
-      <hr>
-      <h6>{{getRoleType(role).info}}</h6>
-    </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" (click)="setup.step = 3">Next</button>
   </div>
 </app-setup-stage>
 
+<app-setup-stage title="Choose a Suspect Role" [setup]="setup" step="3">
+  <div class="card-body">
+    <div *ngIf="setup.packet && !roles" class="row">
+      <div class="col-sm-6">
+        <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn btn-secondary" (click)="fetchRole()">Get 1 random role (advanced)</button>
+      </div>
+    </div>
 
-<div class="suspect-note setup-stage">
-  <h1>Choose a Suspect Note</h1>
-  <div class="row">
+    <div *ngIf="roles" class="row">
+      <div *ngFor="let role of roles" class="selectable-cell col-sm-3" [ngClass]="{active: role === setup.role}" (click)="selectRole(role)">
+        <h6>{{getRoleType(role).flavourName}}</h6>
+        <h6>{{role.flavour}}</h6>
+        <hr>
+        <h3>{{getRoleType(role).name}}</h3>
+        <hr>
+        <h4 *ngFor="let goal of role.goals">{{goal}}</h4>
+        <hr>
+        <h6>{{getRoleType(role).info}}</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+      <button class="btn btn-secondary" (click)="setup.step = 4">Next</button>
+  </div>
+</app-setup-stage>
+
+
+<app-setup-stage title="Choose a Suspect Note" [setup]="setup" step="4">
+  <div class="card-body row">
     <div *ngFor="let note of notes" class="selectable-cell col-sm-5" [ngClass]="{active : note===setup.note}" (click)="selectNote(note)">
       {{note.name}}
     </div>
   </div>
-</div>
 
-<div *ngIf="setup.packet" class="primary-inquiries setup-stage">
-  <h1>Choose 2 Primary Inquiries</h1>
-  <div class="row">
+  <div class="card-footer">
+      <button class="btn btn-secondary" (click)="setup.step = 5">Next</button>
+  </div>
+</app-setup-stage>
+
+<app-setup-stage title="Choose 2 Primary Inquiries" [setup]="setup" step="5">
+  <div *ngIf="setup.packet" class="card-body row">
     <div *ngFor="let inquiry of setup.packet.primaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectPrimaryInquiry(inquiry)">
       <h3>{{inquiry.inquiry}}</h3>
       <br>
@@ -63,11 +77,14 @@
       <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
     </div>
   </div>
-</div>
 
-<div *ngIf="setup.packet" class="secondary-inquiries setup-stage">
-  <h1>Choose 2 Secondary Inquiries</h1>
-  <div class="row">
+  <div class="card-footer">
+      <button class="btn btn-secondary" (click)="setup.step = 6">Next</button>
+  </div>
+</app-setup-stage>
+
+<app-setup-stage title="Choose 2 Secondary Inquiries" [setup]="setup" step="6">
+  <div *ngIf="setup.packet"  class="card-body row">
     <div *ngFor="let inquiry of setup.packet.secondaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectSecondaryInquiry(inquiry)">
       <h3>{{inquiry.inquiry}}</h3>
       <br>
@@ -75,4 +92,4 @@
       <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
     </div>
   </div>
-</div>
+</app-setup-stage>
