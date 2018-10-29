@@ -36,3 +36,16 @@ export class InvestigatorInquiry {
     inquiry : string;
     questions : string[]; 
 }
+
+export class GameSetup {
+    step: number;
+    penalty: Penalty;
+    packet: Packet;
+    role: SuspectRole;
+    note: SuspectNote;
+    primaryInquiry1: InvestigatorInquiry;
+    primaryInquiry2: InvestigatorInquiry;
+    secondaryInquiry1: InvestigatorInquiry;
+    secondaryInquiry2: InvestigatorInquiry;
+
+}

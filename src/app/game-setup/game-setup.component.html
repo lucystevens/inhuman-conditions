@@ -1,6 +1,6 @@
 <app-setup-stage title="Choose a penalty" state="active">
   <div class="row">
-    <div *ngFor="let penalty of penalties" class="selectable-cell col-sm-3" [ngClass]="{active : penalty===selectedPenalty}" (click)="selectPenalty(penalty)">
+    <div *ngFor="let penalty of penalties" class="selectable-cell col-sm-3" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
       {{penalty.penalty}}
     </div>
   </div>
@@ -9,7 +9,7 @@
 
 <app-setup-stage title="Choose a packet" state="incomplete">
   <div class="row">
-    <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===selectedPacket}" (click)="selectPacket(packet)">
+    <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===setup.packet}" (click)="selectPacket(packet)">
       <div class="col-sm-6">{{packet.fullName}}</div>
       <div class="col-sm-3"></div>
       <div class="col-sm-3">
@@ -20,7 +20,7 @@
 </app-setup-stage>
 <hr>
 
-<div *ngIf="selectedPacket" class="suspect-role setup-stage">
+<div *ngIf="setup.packet" class="suspect-role setup-stage">
   <h1>Choose a Suspect Role</h1>
 
   <div *ngIf="!roles" class="row">
@@ -33,7 +33,7 @@
   </div>
 
   <div *ngIf="roles" class="row">
-    <div *ngFor="let role of roles" class="selectable-cell col-sm-3" [ngClass]="{active: role === selectedRole}" (click)="selectRole(role)">
+    <div *ngFor="let role of roles" class="selectable-cell col-sm-3" [ngClass]="{active: role === setup.role}" (click)="selectRole(role)">
       <h6>{{getRoleType(role).flavourName}}</h6>
       <h6>{{role.flavour}}</h6>
       <hr>
@@ -51,17 +51,17 @@
 <div class="suspect-note setup-stage">
   <h1>Choose a Suspect Note</h1>
   <div class="row">
-    <div *ngFor="let note of notes" class="selectable-cell col-sm-5" [ngClass]="{active : note===selectedNote}" (click)="selectNote(note)">
+    <div *ngFor="let note of notes" class="selectable-cell col-sm-5" [ngClass]="{active : note===setup.note}" (click)="selectNote(note)">
       {{note.name}}
     </div>
   </div>
 </div>
 <hr>
 
-<div *ngIf="selectedPacket" class="primary-inquiries setup-stage">
+<div *ngIf="setup.packet" class="primary-inquiries setup-stage">
   <h1>Choose 2 Primary Inquiries</h1>
   <div class="row">
-    <div *ngFor="let inquiry of selectedPacket.primaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectPrimaryInquiry(inquiry)">
+    <div *ngFor="let inquiry of setup.packet.primaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectPrimaryInquiry(inquiry)">
       <h3>{{inquiry.inquiry}}</h3>
       <br>
       <h5>Suggested Prompts</h5>
@@ -71,10 +71,10 @@
   <hr>
 </div>
 
-<div *ngIf="selectedPacket" class="secondary-inquiries setup-stage">
+<div *ngIf="setup.packet" class="secondary-inquiries setup-stage">
   <h1>Choose 2 Secondary Inquiries</h1>
   <div class="row">
-    <div *ngFor="let inquiry of selectedPacket.secondaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectSecondaryInquiry(inquiry)">
+    <div *ngFor="let inquiry of setup.packet.secondaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectSecondaryInquiry(inquiry)">
       <h3>{{inquiry.inquiry}}</h3>
       <br>
       <h5>Suggested Prompts</h5>
