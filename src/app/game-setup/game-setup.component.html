@@ -1,13 +1,13 @@
-<app-setup-stage title="Choose a penalty" state="active">
+<app-setup-stage title="Choose a penalty" setup="{{setup}}" step="1">
   <div class="row">
     <div *ngFor="let penalty of penalties" class="selectable-cell col-sm-3" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
       {{penalty.penalty}}
     </div>
   </div>
 </app-setup-stage>
-<hr>
 
-<app-setup-stage title="Choose a packet" state="incomplete">
+<!--- Use bootstrap cards (replaced panels in bootstrap 4)-->
+<app-setup-stage title="Choose a packet" setup="{{setup}}" step="2">
   <div class="row">
     <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===setup.packet}" (click)="selectPacket(packet)">
       <div class="col-sm-6">{{packet.fullName}}</div>
@@ -18,12 +18,9 @@
     </div>
   </div>
 </app-setup-stage>
-<hr>
 
-<div *ngIf="setup.packet" class="suspect-role setup-stage">
-  <h1>Choose a Suspect Role</h1>
-
-  <div *ngIf="!roles" class="row">
+<app-setup-stage title="Choose a Suspect Role" setup="{{setup}}" step="3">
+  <div *ngIf="setup.packet && !roles" class="row">
     <div class="col-sm-6">
       <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
     </div>
@@ -44,8 +41,7 @@
       <h6>{{getRoleType(role).info}}</h6>
     </div>
   </div>
-  <hr>
-</div>
+</app-setup-stage>
 
 
 <div class="suspect-note setup-stage">
@@ -56,7 +52,6 @@
     </div>
   </div>
 </div>
-<hr>
 
 <div *ngIf="setup.packet" class="primary-inquiries setup-stage">
   <h1>Choose 2 Primary Inquiries</h1>
@@ -68,7 +63,6 @@
       <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
     </div>
   </div>
-  <hr>
 </div>
 
 <div *ngIf="setup.packet" class="secondary-inquiries setup-stage">
@@ -81,5 +75,4 @@
       <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
     </div>
   </div>
-  <hr>
 </div>

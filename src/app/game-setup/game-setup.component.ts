@@ -97,4 +97,14 @@ export class GameSetupComponent implements OnInit {
            inquiry === this.setup.secondaryInquiry2;
   }
 
+  getStateForStep(step: number): string {
+    if(this.setup.step > step){
+      return "complete";
+    }
+    else if(this.setup.step === step){
+      return "active";
+    }
+    else return "incomplete";
+  }
+
 }
