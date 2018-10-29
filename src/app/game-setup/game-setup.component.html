@@ -1,6 +1,7 @@
 <app-setup-stage title="Choose a penalty" [setup]="setup" step="1">
+
   <div class="card-body row">
-    <div *ngFor="let penalty of penalties"  class="col-sm-4 mb-2">
+    <div *ngFor="let penalty of penalties" class="col-sm-4 mb-2">
       <div class="selectable-cell" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
         {{penalty.penalty}}
       </div>
@@ -15,11 +16,14 @@
 <!--- Use bootstrap cards (replaced panels in bootstrap 4)-->
 <app-setup-stage title="Choose a packet" [setup]="setup" step="2">
   <div class="card-body row">
-    <div *ngFor="let packet of packets" class="selectable-cell row col-sm-5" [ngClass]="{active : packet===setup.packet}" (click)="selectPacket(packet)">
-      <div class="col-sm-6">{{packet.fullName}}</div>
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3">
-        <img class="pull-right" src="assets/images/{{packet.icon}}.png" height="50"/>
+    <div *ngFor="let packet of packets" class="col-sm-6 mb-2">
+      <div class="selectable-cell" [ngClass]="{active : packet===setup.packet}" (click)="selectPacket(packet)">
+        <div class="row"> 
+          <div class="col-9">{{packet.fullName}}</div>
+          <div class="col-3">
+            <img class="pull-right packet-icon" src="assets/images/{{packet.icon}}.png" height="50"/>
+          </div>  
+        </div>
       </div>
     </div>
   </div>
