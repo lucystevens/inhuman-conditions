@@ -1,16 +1,5 @@
 <app-setup-stage title="Choose a penalty" [setup]="setup" step="1">
-
-  <div class="card-body row">
-    <div *ngFor="let penalty of penalties" class="col-sm-4 mb-2">
-      <div class="selectable-cell" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
-        {{penalty.penalty}}
-      </div>
-    </div>
-  </div>
-
-  <div class="card-footer">
-    <button class="btn btn-secondary" (click)="setup.step = 2">Next</button>
-  </div>
+  <app-penalty-chooser [setup]="setup"></app-penalty-chooser>
 </app-setup-stage>
 
 <!--- Use bootstrap cards (replaced panels in bootstrap 4)-->

@@ -1,21 +1,3 @@
-div.selectable-cell{
-    background-color: #343A40;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-div.selectable-cell:hover{
-    background-color: #2B3035;
-    box-shadow: 2px 2px #888888;
-}
-
-div.selectable-cell.active{
-    background-color: #000000;
-}
-
 img.packet-icon{
     max-width: 50px;
 }
