@@ -1,10 +1,10 @@
 <div class="card-body">
 
-  <p *ngIf="!discarded" class="card-subtitle mb-2 text-muted"><b>Investigator</b> choose a penalty to discard.</p>
-  <p *ngIf="discarded" class="card-subtitle mb-2 text-muted"><b>Suspect</b> choose a penalty to use.</p>
+  <p *ngIf="!discarded" class="card-subtitle mb-3 text-muted"><b>Investigator</b> choose a penalty to <b>discard</b>.</p>
+  <p *ngIf="discarded" class="card-subtitle mb-3 text-muted"><b>Suspect</b> choose a penalty to use.</p>
 
   <div class="row">
-    <div *ngFor="let penalty of penalties" class="col mb-2">
+    <div *ngFor="let penalty of penalties" class="col-sm col-xs-12 mb-2">
       <div class="selectable-cell" [ngClass]="{active : penalty===selected}" (click)="selectPenalty(penalty)">
         {{penalty.penalty}}
       </div>

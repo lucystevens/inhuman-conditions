@@ -1,11 +1,13 @@
 <div class="card-body">
+
+  <p class="card-subtitle mb-3 text-muted"><b>Suspect</b> chooses a secret role.</p>
   <div *ngIf="!roles" class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 mb-2">
       <div class="centre">
         <button class="btn btn-secondary btn-lg" (click)="fetchRoles()">Choose one from 3 random roles</button>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 mb-2">
       <div class="centre">
         <button class="btn btn-secondary btn-lg" (click)="fetchRole()">Get 1 random role (advanced)</button>
       </div>
