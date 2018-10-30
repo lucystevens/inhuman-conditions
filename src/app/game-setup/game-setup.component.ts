@@ -12,7 +12,6 @@ export class GameSetupComponent implements OnInit {
 
   setup: GameSetup;
 
-  packets : Packet[];
   roles: SuspectRole[];
   notes: SuspectNote[];
 
@@ -23,12 +22,7 @@ export class GameSetupComponent implements OnInit {
     this.setup = new GameSetup();
     this.setup.step = 1;
     
-    this.packets = this.cards.getPackets();
     this.notes = this.cards.getSuspectNotes();
-  }
-
-  selectPacket(packet: Packet){
-    this.setup.packet = packet;
   }
 
   selectRole(role: SuspectRole){
