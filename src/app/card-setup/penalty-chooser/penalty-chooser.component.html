@@ -1,12 +1,20 @@
-<div class="card-body row">
-  <div *ngFor="let penalty of penalties" class="col-sm-4 mb-2">
-    <div class="selectable-cell" [ngClass]="{active : penalty===setup.penalty}" (click)="selectPenalty(penalty)">
-      {{penalty.penalty}}
+<div class="card-body">
+
+  <p *ngIf="!discarded" class="card-subtitle mb-2 text-muted"><b>Investigator</b> choose a penalty to discard.</p>
+  <p *ngIf="discarded" class="card-subtitle mb-2 text-muted"><b>Suspect</b> choose a penalty to use.</p>
+
+  <div class="row">
+    <div *ngFor="let penalty of penalties" class="col mb-2">
+      <div class="selectable-cell" [ngClass]="{active : penalty===selected}" (click)="selectPenalty(penalty)">
+        {{penalty.penalty}}
+      </div>
     </div>
   </div>
+
 </div>
 
 <div class="card-footer">
-  <button class="btn btn-secondary" (click)="validateStep()">Next</button>
+  <button *ngIf="!discarded" class="btn btn-secondary" (click)="discardPenalty()">Discard</button>
+  <button *ngIf="discarded" class="btn btn-secondary" (click)="validateStep()">Next</button>
   <p class="has-error">{{error}}</p>
 </div>
