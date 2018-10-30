@@ -25,23 +25,6 @@ export class GameSetupComponent implements OnInit {
     this.notes = this.cards.getSuspectNotes();
   }
 
-  selectRole(role: SuspectRole){
-    this.setup.role = role;
-  }
-
-  fetchRole() {
-    this.setup.role = this.packetService.getSuspectRole(this.setup.packet);
-    this.roles = [this.setup.role];
-  }
-
-  fetchRoles() {
-    this.roles = this.packetService.getSuspectRoles(this.setup.packet);
-  }
-
-  getRoleType(role: SuspectRole): RoleType {
-    return this.cards.getRoleType(role);
-  } 
-
   selectNote(note: SuspectNote){
     this.setup.note = note;
   }
