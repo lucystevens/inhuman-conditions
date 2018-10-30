@@ -10,33 +10,14 @@
   <app-role-chooser [setup]="setup"></app-role-chooser>
 </app-setup-stage>
 
-
 <app-setup-stage title="Choose a Suspect Note" [setup]="setup" step="4">
   <app-note-chooser [setup]="setup"></app-note-chooser>
 </app-setup-stage>
 
 <app-setup-stage title="Choose 2 Primary Inquiries" [setup]="setup" step="5">
-  <div *ngIf="setup.packet" class="card-body row">
-    <div *ngFor="let inquiry of setup.packet.primaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectPrimaryInquiry(inquiry)">
-      <h3>{{inquiry.inquiry}}</h3>
-      <br>
-      <h5>Suggested Prompts</h5>
-      <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
-    </div>
-  </div>
-
-  <div class="card-footer">
-      <button class="btn btn-secondary" (click)="setup.step = 6">Next</button>
-  </div>
+  <app-inquiry-chooser *ngIf="setup.packet" [setup]="setup" type="primary"></app-inquiry-chooser>
 </app-setup-stage>
 
 <app-setup-stage title="Choose 2 Secondary Inquiries" [setup]="setup" step="6">
-  <div *ngIf="setup.packet"  class="card-body row">
-    <div *ngFor="let inquiry of setup.packet.secondaryInquiries" class="selectable-cell col-sm-3" [ngClass]="{active: isSelected(inquiry)}" (click)="selectSecondaryInquiry(inquiry)">
-      <h3>{{inquiry.inquiry}}</h3>
-      <br>
-      <h5>Suggested Prompts</h5>
-      <h5 *ngFor="let question of inquiry.questions">{{question}}</h5>
-    </div>
-  </div>
+    <app-inquiry-chooser *ngIf="setup.packet" [setup]="setup" type="secondary"></app-inquiry-chooser>
 </app-setup-stage>

@@ -8,6 +8,7 @@ import { PenaltyChooserComponent } from './card-setup/penalty-chooser/penalty-ch
 import { PacketChooserComponent } from './card-setup/packet-chooser/packet-chooser.component';
 import { RoleChooserComponent } from './card-setup/role-chooser/role-chooser.component';
 import { NoteChooserComponent } from './card-setup/note-chooser/note-chooser.component';
+import { InquiryChooserComponent } from './card-setup/inquiry-chooser/inquiry-chooser.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NoteChooserComponent } from './card-setup/note-chooser/note-chooser.com
     PenaltyChooserComponent,
     PacketChooserComponent,
     RoleChooserComponent,
-    NoteChooserComponent
+    NoteChooserComponent,
+    InquiryChooserComponent
   ],
   imports: [
     BrowserModule
