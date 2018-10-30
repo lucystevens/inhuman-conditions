@@ -1,5 +1,5 @@
 <div class="card-body row">
-  <div *ngFor="let note of notes" class="col-sm-5">
+  <div *ngFor="let note of notes" class="col-sm-6">
     <div class="selectable-cell" [ngClass]="{active : note===setup.note}" (click)="selectNote(note)">
       {{note.name}}
     </div>

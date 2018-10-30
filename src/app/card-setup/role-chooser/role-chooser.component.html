@@ -1,15 +1,19 @@
 <div class="card-body">
   <div *ngIf="!roles" class="row">
     <div class="col-sm-6">
-      <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
+      <div class="centre">
+        <button class="btn btn-secondary btn-lg" (click)="fetchRoles()">Choose one from 3 random roles</button>
+      </div>
     </div>
     <div class="col-sm-6">
-      <button class="btn btn-secondary" (click)="fetchRole()">Get 1 random role (advanced)</button>
+      <div class="centre">
+        <button class="btn btn-secondary btn-lg" (click)="fetchRole()">Get 1 random role (advanced)</button>
+      </div>
     </div>
   </div>
 
   <div *ngIf="roles" class="row">
-    <div *ngFor="let role of roles" class="col-sm-4">
+    <div *ngFor="let role of roles" class="col-4 mb-2">
       <div class="selectable-cell" [ngClass]="{active: role === setup.role}" (click)="selectRole(role)">
         <p>{{getRoleType(role).flavourName}}</p>
         <p>{{role.flavour}}</p>

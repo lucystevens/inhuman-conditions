@@ -1,6 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .centre{
+    width: 100%;
     margin: auto;
     text-align: center;
 }
