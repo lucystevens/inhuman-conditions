@@ -7,6 +7,7 @@ import { SetupStageComponent } from './setup-stage/setup-stage.component';
 import { PenaltyChooserComponent } from './card-setup/penalty-chooser/penalty-chooser.component';
 import { PacketChooserComponent } from './card-setup/packet-chooser/packet-chooser.component';
 import { RoleChooserComponent } from './card-setup/role-chooser/role-chooser.component';
+import { NoteChooserComponent } from './card-setup/note-chooser/note-chooser.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RoleChooserComponent } from './card-setup/role-chooser/role-chooser.com
     SetupStageComponent,
     PenaltyChooserComponent,
     PacketChooserComponent,
-    RoleChooserComponent
+    RoleChooserComponent,
+    NoteChooserComponent
   ],
   imports: [
     BrowserModule
