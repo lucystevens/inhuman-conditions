@@ -9,6 +9,7 @@ import { PacketChooserComponent } from './card-setup/packet-chooser/packet-choos
 import { RoleChooserComponent } from './card-setup/role-chooser/role-chooser.component';
 import { NoteChooserComponent } from './card-setup/note-chooser/note-chooser.component';
 import { InquiryChooserComponent } from './card-setup/inquiry-chooser/inquiry-chooser.component';
+import { SwitchPlayerModalComponent } from './switch-player-modal/switch-player-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InquiryChooserComponent } from './card-setup/inquiry-chooser/inquiry-ch
     PacketChooserComponent,
     RoleChooserComponent,
     NoteChooserComponent,
-    InquiryChooserComponent
+    InquiryChooserComponent,
+    SwitchPlayerModalComponent
   ],
   imports: [
     BrowserModule
