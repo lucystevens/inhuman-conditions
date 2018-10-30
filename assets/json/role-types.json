@@ -1,0 +1,21 @@
+[
+    {
+        "id" : 1,
+        "flavourName" : "",
+        "name" : "HUMAN",
+        "info" : "Answer questions to the best of your ability."
+    },
+    {
+        "id" : 2,
+        "flavourName" : "OBSESSION",
+        "name" : "VIOLENT ROBOT",
+        "info" : "To deprogram yourself complete two of the above and stand."
+    },
+    {
+        "id" : 3,
+        "flavourName" : "VULNERABILITY",
+        "name" : "PATIENT ROBOT",
+        "info" : "Complete the penalty once for each time you violate your compulsion."
+    }
+
+]
