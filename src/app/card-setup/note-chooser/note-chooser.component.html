@@ -2,7 +2,7 @@
   <p class="card-subtitle mb-3 text-muted"><b>Suspect</b> chooses a fact for their character.</p>
 
   <div class="row">
-    <div *ngFor="let note of notes" class="col-sm-6">
+    <div *ngFor="let note of notes" class="col-sm-6 mb-2">
       <div class="selectable-cell" [ngClass]="{active : note===setup.note}" (click)="selectNote(note)">
         {{note.name}}
       </div>
