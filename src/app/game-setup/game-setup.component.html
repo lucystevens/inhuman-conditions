@@ -1,0 +1,23 @@
+<app-setup-stage title="Choose a penalty" [setup]="setup" step="1">
+  <app-penalty-chooser [setup]="setup"></app-penalty-chooser>
+</app-setup-stage>
+
+<app-setup-stage title="Choose a packet" [setup]="setup" step="2">
+  <app-packet-chooser [setup]="setup"></app-packet-chooser>
+</app-setup-stage>
+
+<app-setup-stage title="Choose a Suspect Role" [setup]="setup" step="3">
+  <app-role-chooser [setup]="setup"></app-role-chooser>
+</app-setup-stage>
+
+<app-setup-stage title="Choose a Suspect Note" [setup]="setup" step="4">
+  <app-note-chooser [setup]="setup"></app-note-chooser>
+</app-setup-stage>
+
+<app-setup-stage title="Choose 2 Primary Inquiries" [setup]="setup" step="5">
+  <app-inquiry-chooser *ngIf="setup.packet" [setup]="setup" type="primary"></app-inquiry-chooser>
+</app-setup-stage>
+
+<app-setup-stage title="Choose 2 Secondary Inquiries" [setup]="setup" step="6">
+    <app-inquiry-chooser *ngIf="setup.packet" [setup]="setup" type="secondary"></app-inquiry-chooser>
+</app-setup-stage>
