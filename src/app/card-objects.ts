@@ -1,23 +1,23 @@
 import {Penalty, Packet, RoleType, SuspectNote} from './card-definitions';
 
 export const PENALTIES : Penalty[] = [
-    {id : 1, penalty : "APOLOGIZE"},
-    {id : 2, penalty : "SWEAR"},
-    {id : 3, penalty : "SNAP YOUR FINGERS"},
-    {id : 4, penalty : "CLAP AUDIBLY"},
-    {id : 5, penalty : "MISPRONOUNCE A WORD"},
-    {id : 6, penalty : "HUM THREE NOTES"},
-    {id : 7, penalty : "SAY THREE CONSECUTIVE WORDS BEGINNING WITH THE SAME LETTER"},
-    {id : 8, penalty : "SAY TWO CONSECUTIVE RHYMING WORDS"},
-    {id : 9, penalty : "SAY THE NUMBER OF FINGERS HELD UP ON YOUR LEFT HAND"},
-    {id : 10, penalty : "REMAIN SILENT FOR TEN SECONDS"},
-    {id : 11, penalty : "INTERRUPT THE INVESTIGATOR"},
-    {id : 12, penalty : "SAY YOUR LAST NAME"},
-    {id : 13, penalty : "FAIL TO COMPLETE A SENTENCE"},
-    {id : 14, penalty : "REPEAT A QUESTION WORD FOR WORD"},
-    {id : 15, penalty : "SAY 'WHAT'"},
-    {id : 16, penalty : "SAY AT LEAST THREE CONSECUTIVE LETTERS"},
-    {id : 17, penalty : "BEGIN A NEW SENTENCE WITH THE LAST WORD SPOKEN"}
+    {id : 492, penalty : "APOLOGIZE"},
+    {id : 875, penalty : "SWEAR"},
+    {id : 890, penalty : "SNAP YOUR FINGERS"},
+    {id : 659, penalty : "CLAP AUDIBLY"},
+    {id : 953, penalty : "MISPRONOUNCE A WORD"},
+    {id : 406, penalty : "HUM THREE NOTES"},
+    {id : 134, penalty : "SAY THREE CONSECUTIVE WORDS BEGINNING WITH THE SAME LETTER"},
+    {id : 351, penalty : "SAY TWO CONSECUTIVE RHYMING WORDS"},
+    {id : 538, penalty : "SAY THE NUMBER OF FINGERS HELD UP ON YOUR LEFT HAND"},
+    {id : 942, penalty : "REMAIN SILENT FOR TEN SECONDS"},
+    {id : 692, penalty : "INTERRUPT THE INVESTIGATOR"},
+    {id : 977, penalty : "SAY YOUR LAST NAME"},
+    {id : 266, penalty : "FAIL TO COMPLETE A SENTENCE"},
+    {id : 202, penalty : "REPEAT A QUESTION WORD FOR WORD"},
+    {id : 312, penalty : "SAY 'WHAT'"},
+    {id : 507, penalty : "SAY AT LEAST THREE CONSECUTIVE LETTERS"},
+    {id : 412, penalty : "BEGIN A NEW SENTENCE WITH THE LAST WORD SPOKEN"}
 ];
 
 export const ROLE_TYPES : RoleType[] = [
@@ -43,42 +43,42 @@ export const ROLE_TYPES : RoleType[] = [
 ];
 
 export const SUSPECT_NOTES : SuspectNote[] = [
-    {id : 1, name : "DISGRACED ARCHAEOLOGIST"},
-    {id : 2, name : "MAKER OF FALSE ANIMALS"},
-    {id : 3, name : "FRIENDS WITH THE COMMISSIONER"},
-    {id : 4, name : "RENOWNED PROFESSOR"},
-    {id : 5, name : "REALITY TV CONTESTANT"},
-    {id : 6, name : "CULT LEADER"},
-    {id : 7, name : "FOREIGN AMBASSADOR"},
-    {id : 8, name : "IMPRISONED FOR LIFE"},
-    {id : 9, name : "MOTIVATIONAL SPEAKER"},
-    {id : 10, name : "SEPARATIST"},
-    {id : 11, name : "PROFESSIONAL RE-ENACTOR"},
-    {id : 12, name : "DOCK WORKER"},
-    {id : 13, name : "PROFESSIONAL CRIMINAL"},
-    {id : 14, name : "USED VAN SALESMAN"},
-    {id : 15, name : "ANTIQUE HUNTER"},
-    {id : 16, name : "POPSTAR"},
-    {id : 17, name : "RETIRED SPORTS CHAMPION"},
-    {id : 18, name : "VERY OLD"},
-    {id : 19, name : "RAN FOR MAYOR LAST YEAR"},
-    {id : 20, name : "ON LIFE SUPPORT"},
-    {id : 21, name : "DECORATED ROBOT WAR VETERAN"},
-    {id : 22, name : "FORMER INVESTIGATOR"},
-    {id : 23, name : "HAS NO PUBLIC RECORD"},
-    {id : 24, name : "DISHONORABLY DISCHARGED FROM THE MILITARY"},
-    {id : 25, name : "WORLD’S SECOND RICHEST PERSON"},
-    {id : 26, name : "CONSPIRACY THEORIST"}
+    {id : 548, name : "DISGRACED ARCHAEOLOGIST"},
+    {id : 243, name : "MAKER OF FALSE ANIMALS"},
+    {id : 604, name : "FRIENDS WITH THE COMMISSIONER"},
+    {id : 906, name : "RENOWNED PROFESSOR"},
+    {id : 926, name : "REALITY TV CONTESTANT"},
+    {id : 382, name : "CULT LEADER"},
+    {id : 481, name : "FOREIGN AMBASSADOR"},
+    {id : 641, name : "IMPRISONED FOR LIFE"},
+    {id : 981, name : "MOTIVATIONAL SPEAKER"},
+    {id : 342, name : "SEPARATIST"},
+    {id : 491, name : "PROFESSIONAL RE-ENACTOR"},
+    {id : 399, name : "DOCK WORKER"},
+    {id : 188, name : "PROFESSIONAL CRIMINAL"},
+    {id : 634, name : "USED VAN SALESMAN"},
+    {id : 302, name : "ANTIQUE HUNTER"},
+    {id : 663, name : "POPSTAR"},
+    {id : 763, name : "RETIRED SPORTS CHAMPION"},
+    {id : 282, name : "VERY OLD"},
+    {id : 255, name : "RAN FOR MAYOR LAST YEAR"},
+    {id : 755, name : "ON LIFE SUPPORT"},
+    {id : 528, name : "DECORATED ROBOT WAR VETERAN"},
+    {id : 915, name : "FORMER INVESTIGATOR"},
+    {id : 549, name : "HAS NO PUBLIC RECORD"},
+    {id : 559, name : "DISHONORABLY DISCHARGED FROM THE MILITARY"},
+    {id : 142, name : "WORLD’S SECOND RICHEST PERSON"},
+    {id : 602, name : "CONSPIRACY THEORIST"}
 ];
 
 export const PACKETS : Packet[] = [
     {
-        id : 1,
+        id : 622,
         fullName : "Process Your Day",
         icon : "chair",
         primaryInquiries : [
             {
-                id : 1,
+                id : 206,
                 inquiry : "SHARE A PLAN FOR SOME TIME IN THE NEXT SEVEN DAYS",
                 questions : [
                     "What are you doing this weekend?",
@@ -86,7 +86,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 2,
+                id : 778,
                 inquiry : "DESCRIBE A PROJECT OR TASK THEY WORKED ON RECENTLY",
                 questions : [
                     "What did you do today?",
@@ -94,7 +94,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 3,
+                id : 383,
                 inquiry : "SHARE A CONVERSATION THEY HAD RECENTLY OR EXPECT TO HAVE",
                 questions : [
                     "Who did you talk to first today?",
@@ -105,7 +105,7 @@ export const PACKETS : Packet[] = [
         ],
         secondaryInquiries : [
             {
-                id : 4,
+                id : 424,
                 inquiry : "GUESS WHAT ANOTHER PERSON MIGHT HAVE THOUGHT",
                 questions : [
                     "Tell me if the other person thought the conversation went badly or well.",
@@ -113,7 +113,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 381,
                 inquiry : "DESCRIBE SOMETHING THEY ENJOYED OR EXPECT TO ENJOY",
                 questions : [
                     "What was a fun thing you did while you were there?",
@@ -121,7 +121,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 224,
                 inquiry : "DESCRIBE A CHALLENGE THEY RECENTLY FACED",
                 questions : [
                     "What was the hardest part of that conversation?",
@@ -131,25 +131,25 @@ export const PACKETS : Packet[] = [
         ],
         roleCards : [
             {
-                id : 1,
+                id : 982,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 2,
+                id : 739,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 3,
+                id : 230,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 4,
+                id : 323,
                 flavour : "Conflict",
                 type : 2,
                 goals : [
@@ -159,7 +159,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 854,
                 flavour : "Thoroughness",
                 type : 2,
                 goals : [
@@ -169,7 +169,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 462,
                 flavour : "Animals",
                 type : 2,
                 goals : [
@@ -179,7 +179,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 7,
+                id : 620,
                 flavour : "Evaluation",
                 type : 3,
                 goals : [
@@ -188,7 +188,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 8,
+                id : 278,
                 flavour : "Long Term Memory",
                 type : 3,
                 goals : [
@@ -196,7 +196,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 9,
+                id : 475,
                 flavour : "Familiarity",
                 type : 3,
                 goals : [
@@ -206,12 +206,12 @@ export const PACKETS : Packet[] = [
         ]
     },
     {
-        id : 2,
+        id : 675,
         fullName : "Demonstrate Imagination",
         icon : "dragon",
         primaryInquiries : [
             {
-                id : 1,
+                id : 825,
                 inquiry : "DESCRIBE A NEW THING OF A GIVEN TYPE.",
                 questions : [
                     "If you could have any magical power, what would it be?",
@@ -219,7 +219,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 2,
+                id : 852,
                 inquiry : "DESCRIBE SOMETHING THE SUSPECT HAS NEVER SEEN.",
                 questions : [
                     "What would it be like to walk on a distant planet?",
@@ -227,7 +227,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 3,
+                id : 480,
                 inquiry : "CONTINUE A STORY YOU START.",
                 questions : [
                     "Once upon a time, a mouse, a bird, and a sausage joined forces ...",
@@ -237,7 +237,7 @@ export const PACKETS : Packet[] = [
         ],
         secondaryInquiries : [
             {
-                id : 4,
+                id : 124,
                 inquiry : "EXPLAIN THE IMPLICATIONS OF SOMETHING THE SUSPECT CAME UP WITH.",
                 questions : [
                     "If the thing you described existed, what else would exist?",
@@ -245,7 +245,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 530,
                 inquiry : "IMAGINE SOMETHING AGAIN WITH AN EXTRA CONSTRAINT",
                 questions : [
                     "Now tell the story from the perspective of the horse ...",
@@ -253,7 +253,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 568,
                 inquiry : "DESCRIBE THE OPPOSITE OF SOMETHING THE SUSPECT HAS ALREADY DESCRIBED.",
                 questions : [
                     "Now tell the same story, but with a tragic ending.",
@@ -263,25 +263,25 @@ export const PACKETS : Packet[] = [
         ],
         roleCards : [
             {
-                id : 1,
+                id : 165,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 2,
+                id : 521,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 3,
+                id : 540,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 4,
+                id : 498,
                 flavour : "Simplicity",
                 type : 2,
                 goals : [
@@ -291,7 +291,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 785,
                 flavour : "World-Building",
                 type : 2,
                 goals : [
@@ -301,7 +301,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 197,
                 flavour : "Tradition",
                 type : 2,
                 goals : [
@@ -311,7 +311,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 7,
+                id : 962,
                 flavour : "Flexibility",
                 type : 3,
                 goals : [
@@ -319,7 +319,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 8,
+                id : 281,
                 flavour : "Stability",
                 type : 3,
                 goals : [
@@ -327,7 +327,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 9,
+                id : 842,
                 flavour : "Visualization",
                 type : 3,
                 goals : [
@@ -337,12 +337,12 @@ export const PACKETS : Packet[] = [
         ]
     },
     {
-        id : 3,
+        id : 704,
         fullName : "Experience and Process Grief",
         icon : "rose",
         primaryInquiries : [
             {
-                id : 1,
+                id : 551,
                 inquiry : "DESCRIBE A TIME SOMEONE THE SUSPECT CARED ABOUT WAS SAD.",
                 questions : [
                     "What was the last thing that made your father cry?",
@@ -350,7 +350,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 2,
+                id : 508,
                 inquiry : "EXPLAIN HOW THE SUSPECT FELT WHEN THEY GAINED SOMETHING THEY DIDN’T WANT.",
                 questions : [
                     "How did you react when your parents explained death to you?",
@@ -358,7 +358,7 @@ export const PACKETS : Packet[] = [
                 ]
             },            
             {
-                id : 3,
+                id : 162,
                 inquiry : "EXPLAIN HOW IT FELT TO LOSE SOMETHING/ SOMEONE PRECIOUS TO THE SUSPECT.",
                 questions : [
                     "What was the hardest goodbye you’ve ever had to say? How did you cope?",
@@ -368,7 +368,7 @@ export const PACKETS : Packet[] = [
         ],
         secondaryInquiries : [
             {
-                id : 4,
+                id : 698,
                 inquiry : "EXPLAIN HOW THE SUSPECT OVERCAME AN EXPERIENCE.",
                 questions : [
                     "When did you know you were going to be okay?",
@@ -376,7 +376,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 361,
                 inquiry : "SHARE SOMETHING THE SUSPECT LEARNED FROM THE EXPERIENCE.",
                 questions : [
                     "What did that feeling teach you to appreciate?",
@@ -384,7 +384,7 @@ export const PACKETS : Packet[] = [
                 ]
             },            
             {
-                id : 6,
+                id : 487,
                 inquiry : "EXPLAIN HOW AN EVENT AFFECTED SOMEONE ELSE.",
                 questions : [
                     "Who was hurt worse than you?",
@@ -394,25 +394,25 @@ export const PACKETS : Packet[] = [
         ],
         roleCards : [
             {
-                id : 1,
+                id : 907,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 2,
+                id : 445,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 3,
+                id : 909,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 4,
+                id : 747,
                 flavour : "Familiarity",
                 type : 2,
                 goals : [
@@ -422,7 +422,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 972,
                 flavour : "Blame",
                 type : 2,
                 goals : [
@@ -432,7 +432,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 936,
                 flavour : "Justice",
                 type : 2,
                 goals : [
@@ -442,7 +442,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 7,
+                id : 902,
                 flavour : "Acceptance",
                 type : 3,
                 goals : [
@@ -450,7 +450,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 8,
+                id : 844,
                 flavour : "Emotional Vocabulary",
                 type : 3,
                 goals : [
@@ -458,7 +458,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 9,
+                id : 940,
                 flavour : "Consideration",
                 type : 3,
                 goals : [
@@ -468,12 +468,12 @@ export const PACKETS : Packet[] = [
         ]
     },
     {
-        id : 4,
+        id : 556,
         fullName : "Apply Creative Problem Solving",
         icon : "jug",
         primaryInquiries : [
             {
-                id : 1,
+                id : 131,
                 inquiry : "DESCRIBE AT LEAST FIVE DIFFERENT USES FOR AN ORDINARY OBJECT",
                 questions : [
                     "How many uses for a paperclip can you come up with?",
@@ -481,14 +481,14 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 2,
+                id : 575,
                 inquiry : "OVERCOME AN UNUSUAL OBSTACLE",
                 questions : [
                     "You are in a kitchen, holding a small child. A dish towel catches fire. How do you put it out?",
                     "You are in a landslide. How do you survive?"
                 ]
             },            {
-                id : 3,
+                id : 486,
                 inquiry : "SOLVE AN APPARENTLY UNSOLVABLE PROBLEM.",
                 questions : [
                     "You wake up in a room with four seamless walls, an infinitely thick ceiling and floor. How do you escape?",
@@ -498,7 +498,7 @@ export const PACKETS : Packet[] = [
         ],
         secondaryInquiries : [
             {
-                id : 4,
+                id : 167,
                 inquiry : "DESCRIBE A SECOND, DIFFERENT SOLUTION TO A PROBLEM.",
                 questions : [
                     "How else would you solve it?",
@@ -506,7 +506,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 880,
                 inquiry : "SOLVE A PROBLEM AGAIN WITH AN ADDITIONAL OBSTACLE.",
                 questions : [
                     "Could you improvise a solution using only a screwdriver?",
@@ -514,7 +514,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 346,
                 inquiry : "EXPLAIN THEIR THOUGHT PROCESS IN ARRIVING AT A SOLUTION.",
                 questions : [
                     "How did you arrive at that solution?",
@@ -524,25 +524,25 @@ export const PACKETS : Packet[] = [
         ],
         roleCards : [
             {
-                id : 1,
+                id : 874,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 2,
+                id : 833,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 3,
+                id : 196,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 4,
+                id : 933,
                 flavour : "Backstory",
                 type : 2,
                 goals : [
@@ -552,7 +552,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 5,
+                id : 119,
                 flavour : "Persistence",
                 type : 2,
                 goals : [
@@ -562,7 +562,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 6,
+                id : 209,
                 flavour : "Precedent",
                 type : 2,
                 goals : [
@@ -572,7 +572,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 7,
+                id : 433,
                 flavour : "Activity",
                 type : 3,
                 goals : [
@@ -580,7 +580,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 8,
+                id : 193,
                 flavour : "Simplicity",
                 type : 3,
                 goals : [
@@ -588,7 +588,7 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 9,
+                id : 476,
                 flavour : "Complexity",
                 type : 3,
                 goals : [
@@ -596,13 +596,13 @@ export const PACKETS : Packet[] = [
                 ]
             },
             {
-                id : 10,
+                id : 452,
                 flavour : "",
                 type : 1,
                 goals : ["You have nothing to hide."]
             },
             {
-                id : 11,
+                id : 141,
                 flavour : "Improvisation",
                 type : 3,
                 goals : [
