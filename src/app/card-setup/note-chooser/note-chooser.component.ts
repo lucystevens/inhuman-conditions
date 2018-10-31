@@ -1,20 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameSetup, SuspectNote } from '../../card-definitions';
 import { CardService } from '../../card.service';
+import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({
   selector: 'app-note-chooser',
   templateUrl: './note-chooser.component.html',
   styleUrls: ['./note-chooser.component.css']
 })
-export class NoteChooserComponent implements OnInit {
-
-  @Input() setup: GameSetup;
+export class NoteChooserComponent extends BaseChooser implements OnInit {
 
   notes : SuspectNote[];
   error: string;
 
-  constructor(private cards : CardService) { }
+  constructor(private cards : CardService) {
+    super();
+  }
 
   ngOnInit() {
     this.notes = this.cards.getSuspectNotes();
@@ -27,7 +28,7 @@ export class NoteChooserComponent implements OnInit {
 
   validateStep(){
     if(this.setup.note){
-      this.setup.step = 5;
+      this.nextStep();
     }
     else{
       this.error = "You must select a suspect note before proceding."

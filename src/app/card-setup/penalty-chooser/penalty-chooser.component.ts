@@ -1,15 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameSetup, Penalty } from '../../card-definitions';
 import { CardService } from '../../card.service';
+import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({
   selector: 'app-penalty-chooser',
   templateUrl: './penalty-chooser.component.html',
   styleUrls: ['./penalty-chooser.component.css']
 })
-export class PenaltyChooserComponent implements OnInit {
-
-  @Input() setup: GameSetup;
+export class PenaltyChooserComponent extends BaseChooser implements OnInit {
 
   penalties : Penalty[];
 
@@ -17,10 +16,13 @@ export class PenaltyChooserComponent implements OnInit {
   discarded: boolean;
   error: string;
 
-  constructor(private cards : CardService) { }
+  constructor(private cards : CardService) {
+    super();
+  }
 
   ngOnInit() {
     this.penalties = this.cards.getPenalties();
+    this.smoothScroll("#top");
   }
 
   selectPenalty(penalty: Penalty){
@@ -44,8 +46,8 @@ export class PenaltyChooserComponent implements OnInit {
 
   validateStep(){
     if(this.selected){
-      this.setup.step = 2;
       this.setup.penalty = this.selected;
+      this.nextStep();
     }
     else{
       this.error = "You must select a penalty before proceding."

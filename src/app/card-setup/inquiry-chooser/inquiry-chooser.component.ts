@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { InvestigatorInquiry, GameSetup } from '../../card-definitions';
+import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({
   selector: 'app-inquiry-chooser',
   templateUrl: './inquiry-chooser.component.html',
   styleUrls: ['./inquiry-chooser.component.css']
 })
-export class InquiryChooserComponent implements OnInit {
+export class InquiryChooserComponent extends BaseChooser implements OnInit {
 
-  @Input() setup: GameSetup;
   @Input() type: string;
 
   inquiries: InvestigatorInquiry[];
@@ -17,7 +17,9 @@ export class InquiryChooserComponent implements OnInit {
 
   error: string;
 
-  constructor() { }
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
     if(this.type === "primary"){
@@ -68,7 +70,7 @@ export class InquiryChooserComponent implements OnInit {
       this.setup.secondaryInquiry1 = this.inquiry1;
       this.setup.secondaryInquiry2 = this.inquiry2;
     }
-    this.setup.step++;
+    this.nextStep();
   }
 
 }
