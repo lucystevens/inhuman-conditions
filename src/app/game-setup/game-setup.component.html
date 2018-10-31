@@ -21,3 +21,22 @@
 <app-setup-stage title="Choose 2 Secondary Inquiries" [setup]="setup" step="6">
     <app-inquiry-chooser *ngIf="setup.packet" [setup]="setup" type="secondary"></app-inquiry-chooser>
 </app-setup-stage>
+
+<app-setup-stage title="Send game link to suspect" [setup]="setup" step="7">
+  <div *ngIf="setup.step === 7" class="card-body">
+    <p class="card-subtitle mb-3 text-muted">Send game link to suspect</p> 
+    <div class="input-group mb-3">
+      <p class="form-control link-text" aria-describedby="copy-btn">
+        {{getURL()}}
+      </p>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" id="copy-btn" type="button" title="Copy to clipboard" (click)="copy(linktext)">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <input type="text" style="opacity: 0;" value="{{getURL()}}" #linktext>
+  
+  </div>
+</app-setup-stage>
