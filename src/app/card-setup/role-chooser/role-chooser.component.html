@@ -16,16 +16,7 @@
 
   <div *ngIf="roles" class="row">
     <div *ngFor="let role of roles" class="col-sm-4 col-xs-12 mb-2">
-      <div class="selectable-cell" [ngClass]="{active: role === setup.role}" (click)="selectRole(role)">
-        <p>{{getRoleType(role).flavourName}}</p>
-        <p>{{role.flavour}}</p>
-        <hr>
-        <h4>{{getRoleType(role).name}}</h4>
-        <hr>
-        <p *ngFor="let goal of role.goals">{{goal}}</p>
-        <hr>
-        <p>{{getRoleType(role).info}}</p>
-      </div>
+      <app-role-card [role]="role"></app-role-card>
     </div>
   </div>
 </div>

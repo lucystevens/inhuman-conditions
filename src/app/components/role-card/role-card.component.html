@@ -1,0 +1,14 @@
+
+<div class="role-card" [ngClass]="getCardClass()">
+  <div class="circle">
+    <p>{{type.flavourName}}</p>
+    <p>{{role.flavour}}</p>
+    <h4>{{type.name}}</h4>
+  </div>
+  <div class="role-body">
+    <div class="role-goals">
+      <p *ngFor="let goal of role.goals">{{goal}}</p>
+    </div>
+  </div> 
+  <p class="info">{{type.info}}</p>
+</div>

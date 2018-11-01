@@ -11,6 +11,7 @@ import { NoteChooserComponent } from './card-setup/note-chooser/note-chooser.com
 import { InquiryChooserComponent } from './card-setup/inquiry-chooser/inquiry-chooser.component';
 import { SwitchPlayerModalComponent } from './switch-player-modal/switch-player-modal.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { RoleCardComponent } from './components/role-card/role-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     RoleChooserComponent,
     NoteChooserComponent,
     InquiryChooserComponent,
-    SwitchPlayerModalComponent
+    SwitchPlayerModalComponent,
+    RoleCardComponent
   ],
   imports: [
     BrowserModule,
