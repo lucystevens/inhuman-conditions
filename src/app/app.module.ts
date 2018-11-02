@@ -13,6 +13,7 @@ import { SwitchPlayerModalComponent } from './switch-player-modal/switch-player-
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RoleCardComponent } from './components/role-card/role-card.component';
 import { SuspectViewComponent } from './components/suspect-view/suspect-view.component';
+import { CardElementComponent } from './components/card-element/card-element.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SuspectViewComponent } from './components/suspect-view/suspect-view.com
     InquiryChooserComponent,
     SwitchPlayerModalComponent,
     RoleCardComponent,
-    SuspectViewComponent
+    SuspectViewComponent,
+    CardElementComponent
   ],
   imports: [
     BrowserModule,
