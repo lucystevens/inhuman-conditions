@@ -35,7 +35,7 @@
         </button>
       </div>
     </div>
-
+    <p *ngIf="copied" class="copy-confirm">Link copied!</p>
     <input type="text" style="opacity: 0;" value="{{getURL()}}" #linktext>
   
   </div>

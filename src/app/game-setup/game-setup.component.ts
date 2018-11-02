@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { GameSetup } from '../card-definitions';
 import { GameService } from '../services/game.service';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-game-setup',
@@ -11,8 +12,10 @@ export class GameSetupComponent implements OnInit {
 
   setup: GameSetup;
   private url: string;
+  copied: boolean;
 
-  constructor(private setupService: GameService) { }
+  constructor(private setupService: GameService,
+    @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
     this.setup = new GameSetup();
@@ -21,13 +24,14 @@ export class GameSetupComponent implements OnInit {
 
   getURL() : string {
     if(!this.url){
-      const baseUrl = "https://lukecmstevens/inhuman-conditions/suspect/";
+      const baseUrl = this.document.location.origin + "/suspect/";
       this.url = baseUrl + this.setupService.encodeGame(this.setup);
     }
     return this.url;
   }
 
   copy(inputElement){
+    this.copied = true;
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);

@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">You are the suspect</div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <div class="card text-white role-card bg-dark mb-3">
+
+          <div class="card-header">
+            <div class="row">
+              <div class="col-6">
+                <h4 class="role-type">{{roleType.name}}</h4>
+              </div>
+              <div class="col-6">
+                <p class="role-flavour text-right">{{roleType.flavourName}}: {{game.role.flavour}}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-body role-goals">
+            <p *ngFor="let goal of game.role.goals">{{goal}}</p>
+          </div>
+          
+          <div class="card-footer">
+            <small class="text-muted info">{{roleType.info}}</small>
+          </div>
+            
+        </div> 
+      </div>
+
+      <div class="col-6">
+        <div class="card info-cell">
+          <div class="card-header">Selected penalty</div>
+          <div class="card-body">
+            {{game.penalty.penalty}}
+          </div>
+        </div>
+
+        <div class="card info-cell">
+          <div class="card-header">Selected suspect note</div>
+          <div class="card-body">
+            {{game.note.name}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
