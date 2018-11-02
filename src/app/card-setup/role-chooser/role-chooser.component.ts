@@ -23,6 +23,7 @@ export class RoleChooserComponent extends BaseChooser implements OnInit {
 
   
   selectRole(role: SuspectRole){
+    console.log("role selected");
     this.setup.role = role;
     this.error = "";
   }

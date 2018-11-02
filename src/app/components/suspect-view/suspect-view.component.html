@@ -4,28 +4,9 @@
   <div class="card-body">
     <div class="row">
       <div class="col-6">
-        <div class="card text-white role-card bg-dark mb-3">
-
-          <div class="card-header">
-            <div class="row">
-              <div class="col-6">
-                <h4 class="role-type">{{roleType.name}}</h4>
-              </div>
-              <div class="col-6">
-                <p class="role-flavour text-right">{{roleType.flavourName}}: {{game.role.flavour}}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card-body role-goals">
-            <p *ngFor="let goal of game.role.goals">{{goal}}</p>
-          </div>
-          
-          <div class="card-footer">
-            <small class="text-muted info">{{roleType.info}}</small>
-          </div>
-            
-        </div> 
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <app-role-card [role]="game.role"></app-role-card>
+          </app-card-element>
       </div>
 
       <div class="col-6">
