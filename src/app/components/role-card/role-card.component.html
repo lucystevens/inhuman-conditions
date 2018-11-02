@@ -1,11 +1,11 @@
-<div class="role-card center" [ngClass]="getCardClass()">
+<div class="role-card" [ngClass]="getCardClass()">
 
-  <div class="top-circle half-moon role-flavour">
+  <div class="top-circle half-moon role-flavour selectable" [ngClass]="{active: active}">
     <p class="flavour-type">{{type.flavourName}}</p>
     <p class="flavour">{{role.flavour}}</p>
   </div>
 
-  <div class="role-body">
+  <div class="role-body selectable" [ngClass]="{active: active}">
 
     <div class="bottom-circle half-moon">
       <h4 class="role-type">{{type.name}}</h4>
@@ -17,7 +17,7 @@
 
   </div> 
 
-  <div class="bottom-circle half-moon role-info">
+  <div class="bottom-circle half-moon role-info selectable" [ngClass]="{active: active}">
     <p class="info">{{type.info}}</p>
   </div>
 </div>

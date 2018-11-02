@@ -11,6 +11,7 @@ export class RoleCardComponent implements OnInit {
 
   @Input() role: SuspectRole;
   type: RoleType;
+  @Input() active: boolean;
 
   constructor(private cards: CardService) { }
 

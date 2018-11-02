@@ -3,7 +3,7 @@
 
   <div class="row">
     <div *ngFor="let inquiry of inquiries" class="col-sm-4 mb-2">
-      <div  class="selectable-cell" [ngClass]="{active: isSelected(inquiry)}" (click)="selectInquiry(inquiry)">
+      <div  class="selectable selectable-cell" [ngClass]="{active: isSelected(inquiry)}" (click)="selectInquiry(inquiry)">
         <h3>{{inquiry.inquiry}}</h3>
         <br>
         <h5>Suggested Prompts</h5>

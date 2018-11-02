@@ -16,7 +16,9 @@
 
   <div *ngIf="roles" class="row">
     <div *ngFor="let role of roles" class="col-sm-4 col-xs-12 mb-2">
-      <app-role-card [role]="role"></app-role-card>
+      <div (click)="selectRole(role)">
+        <app-role-card [active]="role===setup.role" [role]="role"></app-role-card>
+      </div>
     </div>
   </div>
 </div>

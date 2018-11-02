@@ -17,11 +17,19 @@ div.selectable-cell{
 
 div.selectable-cell:hover{
     background-color: #2B3035;
-    box-shadow: 2px 2px #888888;
 }
 
 div.selectable-cell.active{
     background-color: #000000;
+}
+
+
+div.selectable:hover{
+    box-shadow: 2px 2px #888888;
+}
+
+div.selectable.active{
+    box-shadow: 3px 3px #444444;
 }
 
 .has-error {
