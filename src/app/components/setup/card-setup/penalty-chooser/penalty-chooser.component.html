@@ -5,9 +5,11 @@
 
   <div class="row">
     <div *ngFor="let penalty of penalties" class="col-sm col-xs-12 mb-2">
-      <div class="selectable selectable-cell" [ngClass]="{active : penalty===selected}" (click)="selectPenalty(penalty)">
-        {{penalty.penalty}}
-      </div>
+      <app-card-element [selectable]="true" [dark]="true" [active]="penalty===selected" (onClick)="selectPenalty(penalty)">
+          <div class="card-body centre">
+            <h5 class="card-title">{{penalty.penalty}}</h5>
+          </div>
+      </app-card-element>
     </div>
   </div>
 
