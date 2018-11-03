@@ -1,0 +1,22 @@
+<div class="card-body">
+  <p class="card-subtitle mb-3 text-muted"><b>Suspect</b> chooses a fact for their character.</p>
+
+  <div class="row">
+    <div *ngFor="let note of notes" class="col-sm-6 mb-2">
+      
+      <app-card-element [selectable]="true" [dark]="true" [active]="note===setup.note" (onClick)="selectNote(note)">
+        <div class="card-body">
+          <p class="card-title">{{note.name}}</p>
+        </div>
+      </app-card-element>
+
+    </div>
+  </div>
+</div>
+
+<div class="card-footer">
+  <button class="btn btn-secondary" data-toggle="modal" data-target="#investigator-modal">Next</button>
+  <p class="has-error">{{error}}</p>
+</div>
+
+<app-switch-player-modal player="investigator" (callback)="validateStep()"></app-switch-player-modal>

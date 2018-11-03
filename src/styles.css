@@ -17,11 +17,23 @@ div.selectable-cell{
 
 div.selectable-cell:hover{
     background-color: #2B3035;
-    box-shadow: 2px 2px #888888;
 }
 
 div.selectable-cell.active{
     background-color: #000000;
+}
+
+
+div.selectable:hover{
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(136,136,136,1);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(136,136,136,1);
+    box-shadow: 0px 0px 15px 5px rgba(136,136,136,1);
+}
+
+div.selectable.active{
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(102,102,102,1);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(102,102,102,1);
+    box-shadow: 0px 0px 15px 5px rgba(102,102,102,1);
 }
 
 .has-error {

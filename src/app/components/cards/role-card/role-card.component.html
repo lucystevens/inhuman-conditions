@@ -1,0 +1,18 @@
+<div class="card-header">
+  <div class="row">
+    <div class="col-6">
+      <h4 class="role-type">{{type.name}}</h4>
+    </div>
+    <div class="col-6">
+      <p class="role-flavour text-right">{{type.flavourName}}: {{role.flavour}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-body role-goals">
+  <p *ngFor="let goal of role.goals">{{goal}}</p>
+</div>
+
+<div class="card-footer">
+  <small class="text-muted info">{{type.info}}</small>
+</div>

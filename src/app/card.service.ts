@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Penalty, Packet, RoleType, SuspectNote, SuspectRole} from './card-definitions';
+import {Penalty, Packet, RoleType, SuspectNote, SuspectRole, InvestigatorInquiry} from './card-definitions';
 import {PENALTIES, PACKETS, ROLE_TYPES, SUSPECT_NOTES} from './card-objects';
 import {RandomService} from './random.service';
 
@@ -100,5 +100,33 @@ export class CardService {
     }
     return null;
   }
+
+  /**
+   * Gets a specific primary inquiry from a packet
+   * @param id The id of the primary inquiry
+   * @param packetId The id of the packet to retrieve the inquiry from
+   */
+  getPrimaryInquiry(id: number, packetId: number): InvestigatorInquiry {
+    const packet = this.getPacket(packetId);
+    for (const inquiry of packet.primaryInquiries){
+      if(inquiry.id === id){
+        return inquiry;
+      }
+    }
+  } 
+
+    /**
+   * Gets a specific secondary inquiry from a packet
+   * @param id The id of the secondary inquiry
+   * @param packetId The id of the packet to retrieve the inquiry from
+   */
+  getSecondaryInquiry(id: number, packetId: number): InvestigatorInquiry {
+    const packet = this.getPacket(packetId);
+    for (const inquiry of packet.secondaryInquiries){
+      if(inquiry.id === id){
+        return inquiry;
+      }
+    }
+  } 
 
 }

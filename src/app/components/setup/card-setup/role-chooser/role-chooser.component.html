@@ -1,0 +1,30 @@
+<div class="card-body">
+
+  <p class="card-subtitle mb-3 text-muted"><b>Suspect</b> chooses a secret role.</p>
+  <div *ngIf="!roles" class="row">
+    <div class="col-sm-6 mb-2">
+      <div class="centre">
+        <button class="btn btn-secondary" (click)="fetchRoles()">Choose one from 3 random roles</button>
+      </div>
+    </div>
+    <div class="col-sm-6 mb-2">
+      <div class="centre">
+        <button class="btn btn-secondary" (click)="fetchRole()">Get 1 random role (advanced)</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="roles" class="row">
+    <div *ngFor="let role of roles" class="col-sm-4 col-xs-12 mb-2">
+      <app-card-element [selectable]="true" [dark]="true" [active]="role===setup.role" (onClick)="selectRole(role)">
+        <app-role-card [role]="role"></app-role-card>
+      </app-card-element>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-footer">
+  <button class="btn btn-secondary" (click)="validateStep()">Next</button>
+  <p class="has-error">{{error}}</p>
+</div>
