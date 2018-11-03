@@ -3,12 +3,11 @@
 
   <div class="row">
     <div *ngFor="let inquiry of inquiries" class="col-sm-4 mb-2">
-      <div  class="selectable selectable-cell" [ngClass]="{active: isSelected(inquiry)}" (click)="selectInquiry(inquiry)">
-        <h3>{{inquiry.inquiry}}</h3>
-        <br>
-        <h5>Suggested Prompts</h5>
-        <p *ngFor="let question of inquiry.questions">{{question}}</p>
-      </div>
+
+      <app-card-element [selectable]="true" [dark]="true" [active]="isSelected(inquiry)" (onClick)="selectInquiry(inquiry)">
+        <app-inquiry-card [inquiry]="inquiry"></app-inquiry-card>
+      </app-card-element>
+
     </div>
   </div>
 </div>
