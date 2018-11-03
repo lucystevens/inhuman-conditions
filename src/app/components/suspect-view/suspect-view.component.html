@@ -3,26 +3,26 @@
 
   <div class="card-body">
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6">
         <app-card-element [selectable]="false" [dark]="true" [active]="false">
             <app-role-card [role]="game.role"></app-role-card>
           </app-card-element>
       </div>
 
-      <div class="col-6">
+      <div class="col-lg-6">
         <app-card-element [selectable]="false" [dark]="true" [active]="false">
-            <div class="card-header">Selected penalty</div>
-            <div class="card-body">
-              <p class="card-title">{{game.penalty.penalty}}</p>
-            </div>
+          <div class="card-header">Selected penalty</div>
+          <div class="card-body">
+            <p class="card-title">{{game.penalty.penalty}}</p>
+          </div>
         </app-card-element>
 
-        <div class="card info-cell">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
           <div class="card-header">Selected suspect note</div>
           <div class="card-body">
-            {{game.note.name}}
+            <p class="card-title">{{game.note.name}}</p>
           </div>
-        </div>
+        </app-card-element>
 
       </div>
     </div>
