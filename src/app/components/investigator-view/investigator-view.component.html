@@ -1,0 +1,59 @@
+<div class="card mt-5">
+  <div class="card-header">You are the investigator</div>
+
+  <div class="card-body">
+    <div class="row">
+
+      <div class="col-12">
+        <p class="card-subtitle text-muted mb-2">Primary inquiries</p>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <app-inquiry-card [inquiry]="game.primaryInquiry1"></app-inquiry-card>
+        </app-card-element>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <app-inquiry-card [inquiry]="game.primaryInquiry2"></app-inquiry-card>
+        </app-card-element>
+      </div>
+
+      <div class="col-12">
+        <p class="card-subtitle text-muted mb-2">Secondary inquiries</p>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <app-inquiry-card [inquiry]="game.secondaryInquiry1"></app-inquiry-card>
+        </app-card-element>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <app-inquiry-card [inquiry]="game.secondaryInquiry2"></app-inquiry-card>
+        </app-card-element>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <div class="card-header">Selected penalty</div>
+          <div class="card-body">
+            <p class="card-title">{{game.penalty.penalty}}</p>
+          </div>
+        </app-card-element>
+      </div>
+
+      <div class="col-lg-6">
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+          <div class="card-header">Selected suspect note</div>
+          <div class="card-body">
+            <p class="card-title">{{game.note.name}}</p>
+          </div>
+        </app-card-element>
+      </div>
+
+    </div>
+  </div>
+</div>

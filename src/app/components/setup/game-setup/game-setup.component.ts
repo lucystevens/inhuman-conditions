@@ -22,12 +22,19 @@ export class GameSetupComponent implements OnInit {
     this.setup.step = 1;
   }
 
-  getURL() : string {
+  getSuspectLink() : string {
     if(!this.url){
-      const baseUrl = this.document.location.origin + "/suspect/";
-      this.url = baseUrl + this.setupService.encodeGame(this.setup);
+      this.url = this.setupService.encodeGame(this.setup);
     }
-    return this.url;
+    const baseUrl = this.document.location.origin + "/suspect/";
+    return baseUrl + this.url;
+  }
+
+  getInvestigatorLink() : string {
+    if(!this.url){
+      this.url = this.setupService.encodeGame(this.setup);
+    }
+    return "/investigator/" + this.url;
   }
 
   copy(inputElement){

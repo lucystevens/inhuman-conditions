@@ -23,20 +23,27 @@
 </app-setup-stage>
 
 <app-setup-stage title="Send game link to suspect" [setup]="setup" step="7">
-  <div *ngIf="setup.step === 7" class="card-body">
-    <p class="card-subtitle mb-3 text-muted">Send game link to suspect</p> 
-    <div class="input-group mb-3">
-      <p class="form-control link-text" aria-describedby="copy-btn">
-        {{getURL()}}
-      </p>
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" id="copy-btn" type="button" title="Copy to clipboard" (click)="copy(linktext)">
-          <i class="fas fa-copy"></i>
-        </button>
+  <div *ngIf="setup.step === 7">
+    <div class="card-body">
+      <p class="card-subtitle mb-3 text-muted">Send game link to suspect</p> 
+      <div class="input-group mb-3">
+        <p class="form-control link-text" aria-describedby="copy-btn">
+          {{getSuspectLink()}}
+        </p>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" id="copy-btn" type="button" title="Copy to clipboard" (click)="copy(linktext)">
+            <i class="fas fa-copy"></i>
+          </button>
+        </div>
       </div>
+      <p *ngIf="copied" class="copy-confirm">Link copied!</p>
+      <input type="text" style="opacity: 0;" value="{{getSuspectLink()}}" #linktext>
     </div>
-    <p *ngIf="copied" class="copy-confirm">Link copied!</p>
-    <input type="text" style="opacity: 0;" value="{{getURL()}}" #linktext>
-  
+
+    <div class="card-footer">
+      <a routerLink={{getInvestigatorLink()}}>
+        <button class="btn btn-secondary">Start game as investigator</button>
+      </a>
+    </div>
   </div>
 </app-setup-stage>

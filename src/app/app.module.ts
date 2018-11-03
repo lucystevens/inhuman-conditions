@@ -15,6 +15,7 @@ import { RoleCardComponent } from './components/cards/role-card/role-card.compon
 import { SuspectViewComponent } from './components/suspect-view/suspect-view.component';
 import { CardElementComponent } from './components/cards/card-element/card-element.component';
 import { InquiryCardComponent } from './components/cards/inquiry-card/inquiry-card.component';
+import { InvestigatorViewComponent } from './components/investigator-view/investigator-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InquiryCardComponent } from './components/cards/inquiry-card/inquiry-ca
     RoleCardComponent,
     SuspectViewComponent,
     CardElementComponent,
-    InquiryCardComponent
+    InquiryCardComponent,
+    InvestigatorViewComponent
   ],
   imports: [
     BrowserModule,
