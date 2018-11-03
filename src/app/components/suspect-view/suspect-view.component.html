@@ -10,12 +10,12 @@
       </div>
 
       <div class="col-6">
-        <div class="card info-cell">
-          <div class="card-header">Selected penalty</div>
-          <div class="card-body">
-            {{game.penalty.penalty}}
-          </div>
-        </div>
+        <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <div class="card-header">Selected penalty</div>
+            <div class="card-body">
+              <p class="card-title">{{game.penalty.penalty}}</p>
+            </div>
+        </app-card-element>
 
         <div class="card info-cell">
           <div class="card-header">Selected suspect note</div>

@@ -3,9 +3,13 @@
 
   <div class="row">
     <div *ngFor="let note of notes" class="col-sm-6 mb-2">
-      <div class="selectable selectable-cell" [ngClass]="{active : note===setup.note}" (click)="selectNote(note)">
-        {{note.name}}
-      </div>
+      
+      <app-card-element [selectable]="true" [dark]="true" [active]="note===setup.note" (onClick)="selectNote(note)">
+        <div class="card-body">
+          <p class="card-title">{{note.name}}</p>
+        </div>
+      </app-card-element>
+
     </div>
   </div>
 </div>
