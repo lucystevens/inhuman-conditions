@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CardService } from '../../card.service';
-import { PacketService } from '../../packet.service';
-import { GameSetup, SuspectRole, RoleType } from '../../card-definitions';
+import { CardService } from 'src/app/card.service';
+import { PacketService } from 'src/app/packet.service';
+import { GameSetup, SuspectRole, RoleType } from 'src/app/card-definitions';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({

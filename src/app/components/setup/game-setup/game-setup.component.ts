@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { GameSetup } from '../card-definitions';
-import { GameService } from '../services/game.service';
+import { GameSetup } from 'src/app/card-definitions';
+import { GameService } from 'src/app/services/game.service';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({

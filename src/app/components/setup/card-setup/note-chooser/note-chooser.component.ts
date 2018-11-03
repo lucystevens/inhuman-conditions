@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameSetup, SuspectNote } from '../../card-definitions';
-import { CardService } from '../../card.service';
+import { GameSetup, SuspectNote } from 'src/app/card-definitions';
+import { CardService } from 'src/app/card.service';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({
