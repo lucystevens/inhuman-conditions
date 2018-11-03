@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RoleCardComponent } from './components/cards/role-card/role-card.component';
 import { SuspectViewComponent } from './components/suspect-view/suspect-view.component';
 import { CardElementComponent } from './components/cards/card-element/card-element.component';
+import { InquiryCardComponent } from './components/cards/inquiry-card/inquiry-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CardElementComponent } from './components/cards/card-element/card-eleme
     SwitchPlayerModalComponent,
     RoleCardComponent,
     SuspectViewComponent,
-    CardElementComponent
+    CardElementComponent,
+    InquiryCardComponent
   ],
   imports: [
     BrowserModule,

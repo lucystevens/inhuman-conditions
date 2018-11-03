@@ -1,0 +1,10 @@
+<div class="card-header">
+  {{inquiry.inquiry}}
+</div>
+
+<div class="card-body">
+  <p class="card-subtitle text-muted mb-2">Suggested prompts</p>
+  <ul>
+    <li *ngFor="let question of inquiry.questions">{{question}}</li>
+  </ul>
+</div>
