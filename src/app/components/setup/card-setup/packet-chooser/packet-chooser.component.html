@@ -2,7 +2,7 @@
   <p class="card-subtitle mb-3 text-muted"><b>Both players</b> agree on a packet to use.</p>
 
   <div class="row">
-    <div *ngFor="let packet of packets" class="col-sm-6 mb-2">
+    <div *ngFor="let packet of packets" class="col-lg-6 mb-2">
 
       <app-card-element [selectable]="true" [dark]="true" [active]="packet===setup.packet" (onClick)="selectPacket(packet)">
         <div class="card-body">

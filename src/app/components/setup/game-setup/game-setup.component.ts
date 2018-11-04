@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { GameSetup } from 'src/app/card-definitions';
 import { GameService } from 'src/app/services/game.service';
 import { DOCUMENT } from '@angular/platform-browser';
+import {APP_BASE_HREF} from '@angular/common';
 
 @Component({
   selector: 'app-game-setup',
@@ -26,7 +27,8 @@ export class GameSetupComponent implements OnInit {
     if(!this.url){
       this.url = this.setupService.encodeGame(this.setup);
     }
-    const baseUrl = this.document.location.origin + "/suspect/";
+    let baseUrl = this.document.location.origin;
+    baseUrl += this.document.location.pathname.replace("setup", "suspect/");
     return baseUrl + this.url;
   }
 
