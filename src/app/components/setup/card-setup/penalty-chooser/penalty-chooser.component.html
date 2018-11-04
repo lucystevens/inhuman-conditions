@@ -4,7 +4,7 @@
   <p *ngIf="discarded" class="card-subtitle mb-3 text-muted"><b>Suspect</b> choose a penalty to use.</p>
 
   <div class="row">
-    <div *ngFor="let penalty of penalties" class="col-sm col-xs-12 mb-2">
+    <div *ngFor="let penalty of penalties" class="col-lg col-xs-12 mb-2">
       <app-card-element [selectable]="true" [dark]="true" [active]="penalty===selected" (onClick)="selectPenalty(penalty)">
           <div class="card-body centre">
             <p class="card-title">{{penalty.penalty}}</p>
