@@ -1,0 +1,40 @@
+<div class="card mt-5 mb-5" id="contents">
+  <div class="card-header">
+    <h4>Table of Contents</h4>
+  </div>
+  <div class="list-group">
+    <button type="button"
+        *ngFor="let heading of getHeadings()"
+        (click)="smoothScroll(heading)"
+        class="list-group-item list-group-item-action">
+      {{heading}}
+  </button>
+  </div>
+</div>
+
+<div *ngFor="let section of getSections()" class="card mb-5" id="{{getSectionId(section.title)}}">
+  <div class="card-header">
+    <h4>{{section.title}}</h4>
+  </div>
+  <div class="card-body">
+    <div *ngFor="let element of section.content" class="rules-content">
+
+      <p *ngIf="getContentType(element) == 'TEXT'">{{element}}</p>
+
+      <ul *ngIf="getContentType(element) == 'LIST'">
+        <li *ngFor="let item of getListElements(element)">{{item}}</li>
+      </ul>
+
+      <p *ngIf="getContentType(element) == 'LINK'">
+        {{getLinkElements(element)[0]}}
+        <a class="content-link" (click)="smoothScroll(getLinkElements(element)[2])">
+            {{getLinkElements(element)[1]}}
+        </a>
+        {{getLinkElements(element)[3]}}
+      </p>
+
+      <h6 *ngIf="getContentType(element) == 'SUBTITLE'" class="card-subtitle">{{getSubtitle(element)}}</h6>
+
+    </div>
+  </div>
+</div>
