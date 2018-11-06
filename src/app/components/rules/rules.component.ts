@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RULES, RulesSection } from './rules';
+import { CardService } from 'src/app/card.service';
+import { PacketService } from 'src/app/packet.service';
+import { SuspectRole, InvestigatorInquiry, Packet } from 'src/app/card-definitions';
+import { RandomService } from 'src/app/random.service';
 
 @Component({
   selector: 'app-rules',
@@ -8,90 +11,62 @@ import { RULES, RulesSection } from './rules';
 })
 export class RulesComponent implements OnInit {
 
-  constructor() { }
+  packet: Packet;
+
+  constructor(private cards: CardService, private packets: PacketService, private random: RandomService) { }
 
   ngOnInit() {
+    this.getRandomPacket();
   }
 
-  getSections(): RulesSection[] {
-    return RULES;
+  getRandomPacket(){
+    const packets = this.cards.getPackets();
+    const packetNo = this.random.getRandomNumber(0, packets.length);
+    this.packet = packets[packetNo];
   }
 
-  getHeadings(): string[]{
-    const headings = [];
-    for(const section of RULES){
-      headings.push(section.title);
-    }
-    return headings;
+  getHumanRole(): SuspectRole {
+    return this.cards.getPackets()[0].roleCards[0];
   }
 
-  getSectionId(heading: string): string{
-    const regex = new RegExp("[\\W_]+", "g");
-    let id = heading.replace(regex, "-");
-    return id.toLocaleLowerCase();
-  }
-
-  getContentType(content: string): string{
-    if(content.startsWith("[LIST]:")){
-      return "LIST";
-    }
-    else if(content.includes("[LINK]:")){
-      return "LINK";
-    }
-    if(content.startsWith("[SUBTITLE]:")){
-      return "SUBTITLE";
-    }
-    else if(content.startsWith("[HUMAN ROLE]")){
-      return "HUMAN ROLE";
-    }
-    else if(content.startsWith("[ROBOT ROLES]")){
-      return "ROBOT ROLES";
-    }
-    else if(content.startsWith("[INQUIRY CARDS]")){
-      return "INQUIRY CARDS";
-    }
-    else return "TEXT";
-  }
-
-  getListElements(content: string): string[]{
-    const elements = content.replace("[LIST]:", "").split(" - ");
-    return this.removeEmptyStrings(elements);
-  }
-
-  getLinkElements(content: string): string[]{
-    var linkStartIndex = content.indexOf("[LINK]:(");
-    var linkSplitIndex = content.indexOf("|", linkStartIndex);
-    var linkEndIndex = content.indexOf(")", linkSplitIndex);
-    return [
-      content.substring(0, linkStartIndex),
-      content.substring(linkStartIndex + 8, linkSplitIndex),
-      content.substring(linkSplitIndex + 1, linkEndIndex),
-      content.substring(linkEndIndex + 1)
-    ];
-  }
-
-  getSubtitle(content: string): string{
-    return content.replace("[SUBTITLE]:", "");
-  }
-
-  private removeEmptyStrings(array: string[]){
-    const result = [];
-    for(const val of array){
-      if(val.length > 0){
-        result.push(val);
+  getPatientRobot(): SuspectRole{
+    let patient = [];
+    for(const role of this.packet.roleCards){
+      if(role.type == 3){
+        patient.push(role);
       }
     }
-    return result;
+    this.random.shuffleArray(patient);
+
+    return patient[0];
   }
 
-  smoothScroll(heading: string): boolean{
-    if(!heading.startsWith("#")){
-      heading = "#" + this.getSectionId(heading);
+  getViolentRobot(): SuspectRole {
+    let violent = [];
+    for(const role of this.packet.roleCards){
+      if(role.type == 2){
+        violent.push(role);
+      }
     }
-    console.log(heading);
-    const element = document.querySelector(heading);
+
+    this.random.shuffleArray(violent);
+    return violent[0];
+  }
+
+  getPrimaryInquiry(): InvestigatorInquiry {
+    const primary = this.packet.primaryInquiries;
+    const primaryNo = this.random.getRandomNumber(0, primary.length);
+    return primary[primaryNo];
+  }
+
+  getSecondaryInquiry(): InvestigatorInquiry {
+    const secondary = this.packet.secondaryInquiries;
+    const secondaryNo = this.random.getRandomNumber(0, secondary.length);
+    return secondary[secondaryNo];
+  }
+
+  smoothScroll(element: Element){
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    return false;
-}
+  }
 
 }
