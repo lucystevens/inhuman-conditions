@@ -1,4 +1,26 @@
-<div class="card mt-5">
+<div *ngIf="!started" class="card mt-5">
+  <div class="card-header">Complete preliminary questions</div>
+
+  <div class="card-body">
+    <ul>
+      <li><b>Name:</b> Ask the Suspect to state the name for the record, and copy down whatever name they give.</li>
+      <li>
+        <b>Packet:</b> Indicate the Packet being tested. You may write or draw the Packet icon (“Dragon”, “Coffee”,
+        “Chair”, etc.) or abbreviate the Packet topic (“Imagination,” “Problem Solving”, “P_Y_D”, etc.)
+      </li>
+      <li><b>Penalty Calibrated:</b> Ask the Suspect to perform the Penalty 1-3 times, then check the appropriate box.</li>
+      <li>
+        <b>Identity Confirmed:</b> Ask the Suspect to verbally confirm the truth of their Suspect Note (eg. 
+        “It says here you are a retired stunt pilot, is that correct?”), then check the appropriate box.
+      </li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-secondary" (click)="startGame()">Start</button>
+  </div>
+</div>
+
+<div *ngIf="started" class="card mt-5">
   <div class="card-header">You are the investigator</div>
 
   <div class="card-body">
