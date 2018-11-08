@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class InvestigatorViewComponent implements OnInit {
 
   game: GameSetup;
+  started: boolean;
 
   constructor(private route: ActivatedRoute,
               private games: GameService) { }
@@ -22,6 +23,10 @@ export class InvestigatorViewComponent implements OnInit {
   parseGame(){
     const code = this.route.snapshot.paramMap.get('code');
     this.game = this.games.parseGame(code);
+  }
+
+  startGame(){
+    this.started = true;
   }
 
 }

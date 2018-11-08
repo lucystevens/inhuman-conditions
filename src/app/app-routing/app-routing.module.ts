@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { GameSetupComponent } from '../components/setup/game-setup/game-setup.component';
 import { SuspectViewComponent } from '../components/suspect-view/suspect-view.component';
 import { InvestigatorViewComponent } from '../components/investigator-view/investigator-view.component';
+import { RulesComponent } from '../components/rules/rules.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/setup', pathMatch: 'full' },
   { path: 'setup', component: GameSetupComponent },
+  { path: 'rules', component: RulesComponent },
   { path: 'suspect/:code', component: SuspectViewComponent },
   { path: 'investigator/:code', component: InvestigatorViewComponent }
 ];
