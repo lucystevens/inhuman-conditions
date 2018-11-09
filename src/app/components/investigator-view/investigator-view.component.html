@@ -1,6 +1,4 @@
-<div *ngIf="!started" class="card mt-5">
-  <div class="card-header">Complete preliminary questions</div>
-
+<app-setup-stage title="Complete preliminary questions" [setup]="game" step="0">
   <div class="card-body">
     <ul>
       <li><b>Name:</b> Ask the Suspect to state the name for the record, and copy down whatever name they give.</li>
@@ -18,9 +16,9 @@
   <div class="card-footer">
     <button type="button" class="btn btn-secondary" (click)="startGame()">Start</button>
   </div>
-</div>
+</app-setup-stage>
 
-<div *ngIf="started" class="card mt-5">
+<div class="card mt-5">
   <div class="card-header">You are the investigator</div>
 
   <div class="card-body">
