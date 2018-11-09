@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class InvestigatorViewComponent implements OnInit {
 
   game: GameSetup;
-  timer: number = 30000;
+  timer: number = 300000;
   decision: string;
 
   constructor(private route: ActivatedRoute,
