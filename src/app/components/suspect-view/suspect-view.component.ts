@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameSetup, RoleType } from 'src/app/card-definitions';
+import { GameSetup, RoleType } from 'src/app/domain/card-definitions';
 import { ActivatedRoute } from '@angular/router';
 import { GameService } from 'src/app/services/game.service';
 import { CardService } from 'src/app/services/card.service';

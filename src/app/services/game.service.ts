@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GameSetup } from '../card-definitions';
+import { GameSetup } from '../domain/card-definitions';
 import { CardService } from './card.service';
 import { RandomService } from './random.service';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
 import { PacketService } from 'src/app/services/packet.service';
-import { SuspectRole, InvestigatorInquiry, Packet } from 'src/app/card-definitions';
+import { SuspectRole, InvestigatorInquiry, Packet } from 'src/app/domain/card-definitions';
 import { RandomService } from 'src/app/services/random.service';
 
 @Component({

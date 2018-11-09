@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Penalty, Packet, RoleType, SuspectNote, SuspectRole, InvestigatorInquiry} from '../card-definitions';
-import {PENALTIES, PACKETS, ROLE_TYPES, SUSPECT_NOTES} from '../card-objects';
+import {Penalty, Packet, RoleType, SuspectNote, SuspectRole, InvestigatorInquiry} from '../domain/card-definitions';
+import {PENALTIES, PACKETS, ROLE_TYPES, SUSPECT_NOTES} from '../domain/card-objects';
 import {RandomService} from './random.service';
 
 @Injectable({

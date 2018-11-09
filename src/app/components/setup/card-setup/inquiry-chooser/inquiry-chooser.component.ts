@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { InvestigatorInquiry } from 'src/app/card-definitions';
+import { InvestigatorInquiry } from 'src/app/domain/card-definitions';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 
 @Component({

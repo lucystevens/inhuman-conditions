@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Penalty } from 'src/app/card-definitions';
+import { Penalty } from 'src/app/domain/card-definitions';
 import { CardService } from 'src/app/services/card.service';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 

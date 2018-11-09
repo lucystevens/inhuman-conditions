@@ -1,5 +1,5 @@
 import { Input } from "@angular/core";
-import { GameSetup } from "../card-definitions";
+import { GameSetup } from "./card-definitions";
 
 export abstract class BaseChooser {
 

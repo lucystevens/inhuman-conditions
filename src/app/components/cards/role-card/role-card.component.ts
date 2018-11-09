@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SuspectRole, RoleType } from 'src/app/card-definitions';
+import { SuspectRole, RoleType } from 'src/app/domain/card-definitions';
 import { CardService } from 'src/app/services/card.service';
 
 @Component({
