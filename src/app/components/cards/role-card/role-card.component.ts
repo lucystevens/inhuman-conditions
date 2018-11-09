@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SuspectRole, RoleType } from 'src/app/card-definitions';
-import { CardService } from 'src/app/card.service';
+import { SuspectRole, RoleType } from 'src/app/domain/card-definitions';
+import { CardService } from 'src/app/services/card.service';
 
 @Component({
   selector: 'app-role-card',
@@ -23,5 +23,14 @@ export class RoleCardComponent implements OnInit {
       return "human";
     }
     else return "robot";
+  }
+
+  getFlavour(): string{
+    if(this.type.id == 1){
+      return "";
+    }
+    else{
+      return this.type.flavourName + ": " + this.role.flavour;
+    }
   }
 }

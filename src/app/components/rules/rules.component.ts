@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService } from 'src/app/card.service';
-import { PacketService } from 'src/app/packet.service';
-import { SuspectRole, InvestigatorInquiry, Packet } from 'src/app/card-definitions';
-import { RandomService } from 'src/app/random.service';
+import { CardService } from 'src/app/services/card.service';
+import { PacketService } from 'src/app/services/packet.service';
+import { SuspectRole, InvestigatorInquiry, Packet } from 'src/app/domain/card-definitions';
+import { RandomService } from 'src/app/services/random.service';
 
 @Component({
   selector: 'app-rules',

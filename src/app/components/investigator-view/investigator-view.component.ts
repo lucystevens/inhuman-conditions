@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameSetup } from 'src/app/card-definitions';
+import { GameSetup } from 'src/app/domain/card-definitions';
 import { GameService } from 'src/app/services/game.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class InvestigatorViewComponent implements OnInit {
 
   game: GameSetup;
-  started: boolean;
+  timer: number = 300000;
+  decision: string;
 
   constructor(private route: ActivatedRoute,
               private games: GameService) { }
@@ -23,10 +24,22 @@ export class InvestigatorViewComponent implements OnInit {
   parseGame(){
     const code = this.route.snapshot.paramMap.get('code');
     this.game = this.games.parseGame(code);
+    this.game.step = 0;
   }
 
   startGame(){
-    this.started = true;
+    this.game.step = 1;
+    this.startTimer();
+  }
+
+  private startTimer() {
+    const interval = setInterval(() => {
+      if(this.timer > 0) {
+        this.timer -= 1000;
+      } else {
+        this.timer = 0;
+      }
+    }, 1000)
   }
 
 }

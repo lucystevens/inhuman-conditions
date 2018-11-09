@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { GameSetup } from 'src/app/card-definitions';
+import { GameSetup } from 'src/app/domain/card-definitions';
 import { GameService } from 'src/app/services/game.service';
 import { DOCUMENT } from '@angular/platform-browser';
-import {APP_BASE_HREF} from '@angular/common';
 
 @Component({
   selector: 'app-game-setup',

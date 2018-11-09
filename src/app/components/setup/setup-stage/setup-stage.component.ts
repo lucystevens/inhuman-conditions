@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameSetup } from 'src/app/card-definitions';
+import { GameSetup } from 'src/app/domain/card-definitions';
 
 @Component({
   selector: 'app-setup-stage',

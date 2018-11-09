@@ -1,81 +1,109 @@
-<div *ngIf="!started" class="card mt-5">
-  <div class="card-header">Complete preliminary questions</div>
+<div *ngIf="!decision">
+  <app-setup-stage title="Complete preliminary questions" [setup]="game" step="0">
+    <div class="card-body">
+      <ul>
+        <li><b>Name:</b> Ask the Suspect to state the name for the record, and copy down whatever name they give.</li>
+        <li>
+          <b>Packet:</b> Indicate the Packet being tested. You may write or draw the Packet icon (“Dragon”, “Coffee”,
+          “Chair”, etc.) or abbreviate the Packet topic (“Imagination,” “Problem Solving”, “P_Y_D”, etc.)
+        </li>
+        <li><b>Penalty Calibrated:</b> Ask the Suspect to perform the Penalty 1-3 times, then check the appropriate box.</li>
+        <li>
+          <b>Identity Confirmed:</b> Ask the Suspect to verbally confirm the truth of their Suspect Note (eg. 
+          “It says here you are a retired stunt pilot, is that correct?”), then check the appropriate box.
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-secondary" (click)="startGame()">Start</button>
+    </div>
+  </app-setup-stage>
 
-  <div class="card-body">
-    <ul>
-      <li><b>Name:</b> Ask the Suspect to state the name for the record, and copy down whatever name they give.</li>
-      <li>
-        <b>Packet:</b> Indicate the Packet being tested. You may write or draw the Packet icon (“Dragon”, “Coffee”,
-        “Chair”, etc.) or abbreviate the Packet topic (“Imagination,” “Problem Solving”, “P_Y_D”, etc.)
-      </li>
-      <li><b>Penalty Calibrated:</b> Ask the Suspect to perform the Penalty 1-3 times, then check the appropriate box.</li>
-      <li>
-        <b>Identity Confirmed:</b> Ask the Suspect to verbally confirm the truth of their Suspect Note (eg. 
-        “It says here you are a retired stunt pilot, is that correct?”), then check the appropriate box.
-      </li>
-    </ul>
-  </div>
-  <div class="card-footer">
-    <button type="button" class="btn btn-secondary" (click)="startGame()">Start</button>
-  </div>
-</div>
+  <div class="card mt-5">
+    <div class="card-header">You are the investigator</div>
 
-<div *ngIf="started" class="card mt-5">
-  <div class="card-header">You are the investigator</div>
+    <div class="card-body">
+      <div class="row">
 
-  <div class="card-body">
-    <div class="row">
+        <div class="col-12">
+          <p class="card-subtitle text-muted mb-2">Primary inquiries</p>
+        </div>
 
-      <div class="col-12">
-        <p class="card-subtitle text-muted mb-2">Primary inquiries</p>
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <app-inquiry-card [inquiry]="game.primaryInquiry1"></app-inquiry-card>
+          </app-card-element>
+        </div>
+
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <app-inquiry-card [inquiry]="game.primaryInquiry2"></app-inquiry-card>
+          </app-card-element>
+        </div>
+
+        <div class="col-12">
+          <p class="card-subtitle text-muted mb-2">Secondary inquiries</p>
+        </div>
+
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <app-inquiry-card [inquiry]="game.secondaryInquiry1"></app-inquiry-card>
+          </app-card-element>
+        </div>
+
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <app-inquiry-card [inquiry]="game.secondaryInquiry2"></app-inquiry-card>
+          </app-card-element>
+        </div>
+
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <div class="card-header">Selected penalty</div>
+            <div class="card-body">
+              <p class="card-title">{{game.penalty.penalty}}</p>
+            </div>
+          </app-card-element>
+        </div>
+
+        <div class="col-lg-6">
+          <app-card-element [selectable]="false" [dark]="true" [active]="false">
+            <div class="card-header">Selected suspect note</div>
+            <div class="card-body">
+              <p class="card-title">{{game.note.name}}</p>
+            </div>
+          </app-card-element>
+        </div>
+
       </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <app-inquiry-card [inquiry]="game.primaryInquiry1"></app-inquiry-card>
-        </app-card-element>
-      </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <app-inquiry-card [inquiry]="game.primaryInquiry2"></app-inquiry-card>
-        </app-card-element>
-      </div>
-
-      <div class="col-12">
-        <p class="card-subtitle text-muted mb-2">Secondary inquiries</p>
-      </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <app-inquiry-card [inquiry]="game.secondaryInquiry1"></app-inquiry-card>
-        </app-card-element>
-      </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <app-inquiry-card [inquiry]="game.secondaryInquiry2"></app-inquiry-card>
-        </app-card-element>
-      </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <div class="card-header">Selected penalty</div>
-          <div class="card-body">
-            <p class="card-title">{{game.penalty.penalty}}</p>
-          </div>
-        </app-card-element>
-      </div>
-
-      <div class="col-lg-6">
-        <app-card-element [selectable]="false" [dark]="true" [active]="false">
-          <div class="card-header">Selected suspect note</div>
-          <div class="card-body">
-            <p class="card-title">{{game.note.name}}</p>
-          </div>
-        </app-card-element>
-      </div>
-
     </div>
   </div>
 </div>
+
+<div *ngIf="decision" class="full-screen" [ngClass]="decision">
+  <i class="fas fa-times close" (click)="decision = undefined"></i>
+  <div class="container centre">
+    <h1 class="text-white">{{ decision | uppercase }}</h1>
+  </div>
+</div>
+
+<footer class="footer fixed-bottom ">
+  <div class="container">
+    <div class="row">
+      <div class="col-5">
+        <button [disabled]="timer > 0" type="button"
+          class="btn btn-success centre"
+          (click)="decision = 'human'">HUMAN</button>
+      </div>
+      <div class="col-2">
+        <h4 *ngIf="timer > 0" class="timer centre">{{ timer | date:'mm:ss' }} </h4>
+        <h5 *ngIf="timer == 0" class="final-question centre">ASK FINAL QUESTION</h5>
+      </div>
+      <div class="col-5">
+          <button [disabled]="game.step == 0" type="button"
+          class="btn btn-danger centre"
+          (click)="decision = 'robot'">ROBOT</button>
+      </div>
+    </div>
+  </div>
+</footer>
