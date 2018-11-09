@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SuspectRole, RoleType } from 'src/app/card-definitions';
-import { CardService } from 'src/app/card.service';
+import { CardService } from 'src/app/services/card.service';
 
 @Component({
   selector: 'app-role-card',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Packet, SuspectRole } from './card-definitions';
+import { Packet, SuspectRole } from '../card-definitions';
 import { RandomService } from './random.service';
 
 @Injectable({

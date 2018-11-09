@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GameSetup } from '../card-definitions';
-import { CardService } from '../card.service';
-import { RandomService } from '../random.service';
+import { CardService } from './card.service';
+import { RandomService } from './random.service';
 
 @Injectable({
   providedIn: 'root'

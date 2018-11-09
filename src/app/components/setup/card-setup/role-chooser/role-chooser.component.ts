@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService } from 'src/app/card.service';
-import { PacketService } from 'src/app/packet.service';
+import { CardService } from 'src/app/services/card.service';
+import { PacketService } from 'src/app/services/packet.service';
 import { SuspectRole, RoleType } from 'src/app/card-definitions';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 
