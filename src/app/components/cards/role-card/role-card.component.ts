@@ -24,4 +24,13 @@ export class RoleCardComponent implements OnInit {
     }
     else return "robot";
   }
+
+  getFlavour(): string{
+    if(this.type.id == 1){
+      return "";
+    }
+    else{
+      return this.type.flavourName + ": " + this.role.flavour;
+    }
+  }
 }
