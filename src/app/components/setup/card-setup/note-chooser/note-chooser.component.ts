@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { GameSetup, SuspectNote } from 'src/app/card-definitions';
+import { Component, OnInit } from '@angular/core';
+import { SuspectNote } from 'src/app/card-definitions';
 import { CardService } from 'src/app/card.service';
 import { BaseChooser } from 'src/app/domain/base-chooser';
 

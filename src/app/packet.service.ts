@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Penalty, Packet, RoleType, SuspectNote, SuspectRole, InvestigatorInquiry} from './card-definitions';
-import {PENALTIES, PACKETS, ROLE_TYPES, SUSPECT_NOTES} from './card-objects';
-import {RandomService} from './random.service';
+import { Packet, SuspectRole } from './card-definitions';
+import { RandomService } from './random.service';
 
 @Injectable({
   providedIn: 'root'

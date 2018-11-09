@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GameSetup } from 'src/app/card-definitions';
 import { GameService } from 'src/app/services/game.service';
 import { ActivatedRoute } from '@angular/router';
-import {timer} from 'rxjs';
 
 @Component({
   selector: 'app-investigator-view',
