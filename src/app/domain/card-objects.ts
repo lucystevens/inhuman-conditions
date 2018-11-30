@@ -3,10 +3,10 @@ import {Penalty, Packet, RoleType, SuspectNote} from './card-definitions';
 export const PENALTIES : Penalty[] = [
     {id : 492, penalty : "APOLOGIZE"},
     {id : 875, penalty : "SWEAR"},
-    {id : 890, penalty : "SNAP YOUR FINGERS"},
-    {id : 659, penalty : "CLAP AUDIBLY"},
+    {id : 890, penalty : "TAKE YOUR HANDS OFF THE TABLE"},
+    {id : 659, penalty : "ASK FOR CLARIFICATION"},
     {id : 953, penalty : "MISPRONOUNCE A WORD"},
-    {id : 406, penalty : "HUM THREE NOTES"},
+    {id : 406, penalty : "RESTATE A QUESTION IN YOUR OWN WORDS"},
     {id : 134, penalty : "SAY THREE CONSECUTIVE WORDS BEGINNING WITH THE SAME LETTER"},
     {id : 351, penalty : "SAY TWO CONSECUTIVE RHYMING WORDS"},
     {id : 538, penalty : "SAY THE NUMBER OF FINGERS HELD UP ON YOUR LEFT HAND"},
@@ -14,10 +14,16 @@ export const PENALTIES : Penalty[] = [
     {id : 692, penalty : "INTERRUPT THE INVESTIGATOR"},
     {id : 977, penalty : "SAY YOUR LAST NAME"},
     {id : 266, penalty : "FAIL TO COMPLETE A SENTENCE"},
-    {id : 202, penalty : "REPEAT A QUESTION WORD FOR WORD"},
-    {id : 312, penalty : "SAY 'WHAT'"},
-    {id : 507, penalty : "SAY AT LEAST THREE CONSECUTIVE LETTERS"},
-    {id : 412, penalty : "BEGIN A NEW SENTENCE WITH THE LAST WORD SPOKEN"}
+    {id : 202, penalty : "SAY AT LEAST THREE LETTERS IN A ROW"},
+    {id : 312, penalty : "DONT'T RESPOND TO A QUESTION"},
+    {id : 507, penalty : "SAY A WORD WITH AT LEAST FIVE SYLLABLES"},
+    {id : 412, penalty : "BEGIN A NEW SENTENCE WITH THE LAST WORD SPOKEN"},
+    {id : 588, penalty : "SAY TWO CONJUCTIONS IN A ROW"},
+    {id : 816, penalty : "COMPLIMENT THE INVESTIGATOR"},
+    {id : 660, penalty : "SAY AT LEAST THREE CONSECUTIVE WORDS ENDING WITH THE SAME LETTER"},
+    {id : 900, penalty : "SAY THE NAME OF A PUNCTUATION MARK"},
+    {id : 615, penalty : "REFER TO YOURSELF IN THE THIRD PERSON"},
+    {id : 231, penalty : "SAY FOUR CONSECUTIVE WORDS BEGINNING WITH THE SAME LETTER"}
 ];
 
 export const ROLE_TYPES : RoleType[] = [
@@ -43,32 +49,42 @@ export const ROLE_TYPES : RoleType[] = [
 ];
 
 export const SUSPECT_NOTES : SuspectNote[] = [
-    {id : 548, name : "DISGRACED ARCHAEOLOGIST"},
+    {id : 548, name : "DISGRACED SCIENTIST"},
     {id : 243, name : "MAKER OF FALSE ANIMALS"},
     {id : 604, name : "FRIENDS WITH THE COMMISSIONER"},
     {id : 906, name : "RENOWNED PROFESSOR"},
     {id : 926, name : "REALITY TV CONTESTANT"},
     {id : 382, name : "CULT LEADER"},
     {id : 481, name : "FOREIGN AMBASSADOR"},
-    {id : 641, name : "IMPRISONED FOR LIFE"},
+    {id : 641, name : "MENTALIST"},
     {id : 981, name : "MOTIVATIONAL SPEAKER"},
-    {id : 342, name : "SEPARATIST"},
-    {id : 491, name : "PROFESSIONAL RE-ENACTOR"},
-    {id : 399, name : "DOCK WORKER"},
+    {id : 342, name : "CANNIBAL"},
+    {id : 491, name : "PRESIDENTIAL IMPERSONATOR"},
+    {id : 399, name : "AMATEUR WRESTLER"},
     {id : 188, name : "PROFESSIONAL CRIMINAL"},
     {id : 634, name : "USED VAN SALESMAN"},
-    {id : 302, name : "ANTIQUE HUNTER"},
+    {id : 302, name : "SMALL CHILD"},
     {id : 663, name : "POPSTAR"},
     {id : 763, name : "RETIRED SPORTS CHAMPION"},
     {id : 282, name : "VERY OLD"},
     {id : 255, name : "RAN FOR MAYOR LAST YEAR"},
-    {id : 755, name : "ON LIFE SUPPORT"},
+    {id : 755, name : "LIFESTYLE DESIGNER"},
     {id : 528, name : "DECORATED ROBOT WAR VETERAN"},
     {id : 915, name : "FORMER INVESTIGATOR"},
-    {id : 549, name : "HAS NO PUBLIC RECORD"},
+    {id : 549, name : "CLERGY MEMBER"},
     {id : 559, name : "DISHONORABLY DISCHARGED FROM THE MILITARY"},
     {id : 142, name : "WORLD’S SECOND RICHEST PERSON"},
-    {id : 602, name : "CONSPIRACY THEORIST"}
+    {id : 602, name : "CONSPIRACY THEORIST"},
+    {id : 733, name : "“THE BUTCHER”"},
+    {id : 869, name : "ADDICT"},
+    {id : 499, name : "BODY BUILDER"},
+    {id : 943, name : "TAKEN A VOW OF SERVICE"},
+    {id : 150, name : "PRESIDENT-IN-EXILE"},
+    {id : 846, name : "FREELANCE ROBOT HUNTER"},
+    {id : 769, name : "LAST OF THEIR NAME"},
+    {id : 235, name : "HEIR TO A VAST FORTUNE"},
+    {id : 841, name : "BLACKMAIL VICTIM"},
+    {id : 781, name : "ROYALTY"}
 ];
 
 export const PACKETS : Packet[] = [
