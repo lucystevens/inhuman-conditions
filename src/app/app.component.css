@@ -5,7 +5,17 @@
     color: white;
 }
 
-div.container{
-    margin: auto;
+@media (min-width: 992px){
+    div.main-container {
+        max-width: 70%;
+    }
+}
+
+div.main-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
